@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    MVC是一种开发模式，在研发项目时，我们将项目中的内容分为三层：M,V,C
+    v: view层（视觉层），至当前项目中用户所能看见到所有的所有需要渲染在浏览器中的内容
+    c:controller层(控制层),解析任务，划分任务到具体的文件
+    m:model层（模块层），接收controller分发的具体任务，完成任务
+
+    view -> controller -> model ->view
+-->
+用户名:<input type="text" class="u-name">
+<br>
+密码: <input type="password" class="u-pwd">
+<br>
+<button class="l-btn">登录</button>
+<hr>
+用户名:<input type="text" class="r-name">
+<br>
+密码: <input type="password" class="r-pwd">
+<br>
+<!--头像: <input type="text" class="r-avatar">-->
+<br>
+电话: <input type="text" class="r-tel">
+<br>
+性别: <input type="text" class="r-sex">
+<br>
+<button class="r-btn">注册</button>
+
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="user.js"></script>
+</body>
+</html>
