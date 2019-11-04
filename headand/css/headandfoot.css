@@ -1,0 +1,220 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+.sdb-page-heade{
+    position:fixed;
+    top: 10px;
+    width: 100vw;
+    height: 100px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.head-top{
+    padding: 0px 150px;
+    color: white;
+    /*line-height: 30px;*/
+    background: black;
+    height: 25px;
+ }
+.flot-right a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 12px;
+    text-align: right;
+    padding:0 10px;
+    line-height: 14px;
+}
+.flot-right{
+    float: right;
+}
+
+.sdbCart{
+    width: 10px;
+    height: 10px;
+    background: url("../../imgs/header_top_icon.png") no-repeat;
+    background-size: 200%;
+    background-position: 0% 50%;
+    padding-left: 15px;
+}
+.sdbCNumber{
+    padding: 4px;
+}
+.sdbCCollect{
+    width: 10px;
+    height: 10px;
+    background: url("../../imgs/header_top_icon.png") no-repeat;
+    background-size: 200%;
+    background-position: -17px 50%;
+    padding-left: 15px;
+}
+
+.sdb-ul>li>div{
+    display: none;
+}
+.sdbGoodsHover{
+    background: #333333;
+    width: 100vw;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    /*color: black;*/
+    padding: 30px;
+    font-size: 20px;
+}
+.sdbHeadList a{
+    display: inline-block;
+    vertical-align: top;
+}
+.sdbGoodsHover>ul>li{
+    display: inline-block;
+    vertical-align: top;
+}
+.sdbHeadList:hover .sdbGoodsHover{
+    display: block;
+}
+
+
+.head-bottom{
+   padding: 40px 15px 0px 15px;
+}
+
+/*.sdb-logo{*/
+/*    display: inline-block;*/
+/*}*/
+.head-bottom>ul{
+    width: 68%;
+    display: inline-block;
+    text-align: center;
+    padding: 0 15px;
+    /*width: calc(100% - 340px);*/
+}
+
+
+.sdbClothesLetter>h4,.sdbClothesLetter>ul{
+    padding: 0 20px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.sdbClothesLetter>ul>li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.sdbClothesLetter>ul>li>a{
+    color: #e5e5e5;
+    font-size: 16px;
+    padding: 10px 0;
+}
+.head-bottom>ul>li{
+    display: inline-block;
+    padding: 15px 12px 26px;
+    font-size: 20px;
+    font-weight: 900;
+}
+.head-bottom>ul>li :hover{
+    color: #e5e5e5;
+}
+.sdb-ul a{
+    text-decoration: none;
+    color: #333333;
+
+}
+
+.sdbHeadInput{
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    padding: 8px 45px 8px 10px;
+    background: url("../../imgs/header_icon.png") no-repeat;
+    background-size: 50%;
+    background-position: 185px 55%;
+    border-radius: 2px;
+}
+.sdbHeadInput>input{
+    outline: medium;
+    border: none;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color:#eee;
+}
+
+
+
+
+
+
+
+
+.sdb-foots{
+    /* display: none; */
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+.sdbFoot-top{
+    /*top: ;*/
+    /*float: bottom;*/
+    background: #f1f1f1;
+    padding: 23px 0px 17px;
+}
+.sdbFootUl{
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+}
+.sdbFootUl>li{
+    display: inline-block;
+    width: calc(800px / 4);
+    vertical-align: top;
+
+}
+.sdbFootTop-list>a{
+    display: block;
+    text-decoration: none;
+    color: #666666;
+    font-size: 10px;
+    margin-bottom: 8px;
+
+}
+.sdbFootUl h5{
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+.sdbFoot-bottom {
+    width: 100vw;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.sdbSide{
+    position: fixed;
+    bottom: 200px;
+    right: 0;
+    background: #222222;
+    padding: 15px 7px;
+    width: 44px;
+  
+}
+.sdbSide img{
+    width: 30px;
+}
+.sdbSide a{
+    text-decoration: none;
+    color: #e5e5e5;
+}
