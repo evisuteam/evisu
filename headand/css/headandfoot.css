@@ -82,6 +82,7 @@ a{
 
 .head-bottom{
    padding: 40px 15px 0px 15px;
+   /* margin-top: 10px; */
 }
 
 /*.sdb-logo{*/
@@ -152,6 +153,7 @@ input::-webkit-input-placeholder { /* WebKit browsers */
 
 
 .sdb-foots{
+    margin-top: 10px;
     /* display: none; */
     position: fixed;
     bottom: 0;
@@ -217,4 +219,15 @@ input::-webkit-input-placeholder { /* WebKit browsers */
 .sdbSide a{
     text-decoration: none;
     color: #e5e5e5;
+}
+
+.sdbFooterBottomTopFont,.sdbFooterBottomBottom,.sdbFooterBottomP{
+    font-size: 10px;
+}
+
+.sdbFoot-bottom a{
+    color: #333333;
+}
+.sdbFooterBottomP{
+    color: #bbbbbb;
 }
