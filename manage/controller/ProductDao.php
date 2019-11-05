@@ -13,10 +13,13 @@ $type = $_POST['type'];
 
 switch($type){
     case 'insert':
+        $Type1 = $_POST['Type1'];
+        $Type2 = $_POST['Type2'];
 
+        insertProduct($pro);
         break;
     case 'delete':
-
+        deleteProduct();
         break;
     case 'update':
 

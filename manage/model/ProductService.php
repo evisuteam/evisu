@@ -40,7 +40,20 @@ class ProductService{
         if($res){
 //            echo '{"code":"1"}';//修改成功
             echo json_encode($res);//返回前端可以识别的json
+        }else{
+            echo '{"code":"0"}';//修改错误
         }
 
     }
+    //删除商品
+    function deleteProduct($id){
+        $sql = "delete from goodlist where ID='{$id}'";
+        $res = $this->db->mysqli->query($sql);
+        if($res){
+            echo '{"code":"1"}';//删除成功
+        }else{
+            echo '{"code":"0"}';//删除失败
+        }
+    }
+
 }
