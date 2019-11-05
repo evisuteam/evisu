@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Arial','微软雅黑','Hiragino Sans GB';
+    color: #333;
+    font-weight: 400;
+    line-height: 1.42857143;
+}
+main{
+    max-width: 1280px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.zq-text h1{
+    font-size: 36px;
+    font-weight: 500;
+    padding: 60px 0 10px;
+}
+.zq-shopcar thead{
+    font-size: 14px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+    width: 100%;
+}
+.zq-shopcar{
+    flex-wrap: wrap;
+}
+.zq-shopcar thead th{
+    font-weight: 500;
+    padding: 15px 10px;
+    text-align: center;
+}
+.zq-shopcar tbody{
+    font-size: 14px;
+}
+.zq-shopcar tbody img, .zq-product-item a{
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.zq-shopcar tbody td{
+    padding: 20px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+.zq-shopcar .zq-product-name{
+    max-width: 70px;
+    word-break: break-all;
+    text-align: left;
+}
+.zq-product-name a{
+    cursor: pointer;
+}
+.zq-product-item{
+    text-align: center;
+}
+.zq-input-number{
+    display: inline-block;
+    border: none;
+    height: 26px;
+    text-align: center;
+    width: 47px;
+    outline: none;
+    vertical-align: middle;
+    padding: 0 9px;
+    background: white;
+}
+.zq-number{
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 93px;
+    height: 30px;
+    line-height: 26px;
+    background: #fff;
+}
+.zq-sub, .zq-add{
+    font-size: 22px;
+    width: 20px;
+    height: 28px;
+    font-weight: 400;
+    line-height: 30px;
+    cursor: pointer ;
+    color: #cccccc;
+}
+.zq-sub{
+    float: left;
+    margin-left: 2px;
+}
+.zq-add{
+    float: right;
+    margin-right: 2px;
+}
+.zq-del{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.zq-del span{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #ccc;
+}
+.zq-product-name:hover{
+    text-decoration: underline;
+}
+.zq-del:active{
+    box-shadow: 1px 1px 0 #ccc;
+}
+input[type="checkbox"]{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}

@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>购物车</title>
+    <link rel="icon" href="../../imgs/evisu.jpg">
+    <link rel="stylesheet" href="../css/shopcar.css">
 </head>
 <body>
+<main>
+    <div class="zq-text">
+        <h1>购物车</h1>
+    </div>
+    <div class="zq-body">
+        <div class="zq-shopcar">
+            <table>
+                <thead>
+                <tr>
+                    <th><span>&nbsp;</span></th>
+                    <th><span>产品</span></th>
+                    <th><span>&nbsp;</span></th>
+                    <th><span>颜色/尺寸</span></th>
+                    <th><span>价格</span></th>
+                    <th><span>数量</span></th>
+                    <th><span>小计</span></th>
+                    <th><span>&nbsp;</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" checked>
+                    </td>
+                    <td class="zq-product-item"><a title="【陈冠希同款】EVISU 19AW 男士窄脚大M印花牛仔裤 1EAHTM9JE91417"><img src="../../imgs/05.jpg" alt="【陈冠希同款】EVISU 19AW 男士窄脚大M印花牛仔裤 1EAHTM9JE91417"></a></td>
+                    <td class="zq-product-name"><a>【陈冠希同款】EVISU 19AW 男士窄脚大M印花牛仔裤 1EAHTM9JE91417</a></td>
+                    <td><span>XL</span></td>
+                    <td><span>￥ 3,299.00</span></td>
+                    <td>
+                        <div class="zq-number">
+                            <span class="zq-sub">-</span>
+                            <input type="number" value="1" size="4"  disabled="disabled" class="zq-input-number">
+                            <span class="zq-add">+</span>
+                        </div>
+                    </td>
+                    <td><span>￥ 3,299.00</span></td>
+                    <td>
+                        <div class="zq-del">
+                            <span>X</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="zq-shopfoot">
+            <div class="zq-money">
+                <table>
 
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="../js/shopcar.js"></script>
 </body>
 </html>
