@@ -1,0 +1,136 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    color:#666;
+    cursor: pointer;
+}
+html{
+    font-size: calc(10000vw / 1300);
+}
+/* 登录 */
+.login,.register{
+
+    background-image: url("../../../imgs/01.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+}
+.login{
+    height: 4.4rem;
+}
+.register{
+    height: 5.7rem;
+}
+.login_box,.reg_box{
+    width:3.95rem;
+    padding-top:.50rem;
+    background: #fafafa;
+    border-radius: .08rem;
+    float:right;
+    position: relative;
+    top:.25rem;
+    right:2rem;
+    overflow: hidden;
+}
+.reg_box,.login_box{
+    font-size: .15rem;
+}
+.login_tab{
+    display: table;
+    position: relative;
+    margin:0 auto;
+    margin-bottom: .15rem;
+    font-size:.14rem;
+}
+/* 地区 */
+.login_text,.login_inp,.reg_inp{
+    width: 2.70rem;
+    height: .42rem;
+    padding:.1rem;
+}
+.login_num{
+    display: inline-block;
+    font-size:0;
+    position: relative;
+}
+.login_num_86{
+    display: inline-block;
+    font-size:.14rem;
+    line-height: .42rem;
+    position: absolute;
+    left:0px;
+    border-right:1px solid lightgray;
+    padding:0 .10rem;
+}
+.login_num .notice1,.notice3{
+    font-size:.14rem;
+}
+.login_p{
+    text-indent: .5rem;
+}
+.signin_a{
+    font-size:.14rem;
+}
+.signin_zc{
+    margin-right:1.45rem;
+}
+.login_btn{
+    width: 2.7rem;
+    padding:.10rem 0;
+    background: lightgray;
+    color:#fff;
+    margin:.15rem auto;
+    letter-spacing: .05rem;
+}
+.login_bottom{
+    font-size:.14rem;
+    line-height: .30rem;
+    height: .6rem;
+    padding: .15rem 0;
+    background: #c6c6c6;
+}
+.login_bottom img,.login_bottom span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .16rem;
+    color:#000;
+}
+/* 注册 */
+.reg_code{
+    position: relative;
+    margin-bottom: .15rem;
+}
+.reg_code_btn{
+    height: .42rem;
+    position: absolute;
+    background: #d2d2d2;
+    right:.63rem;
+    padding:.1rem;
+    font-size:.14rem;
+}
+.reg_des{
+    font-size:0;
+}
+.reg_des input,.reg_des span{
+    font-size:.14rem;
+    vertical-align: middle;
+}
+.reg_des span a{
+    text-decoration: underline;
+}
+.reg_login{
+    font-size:.14rem;
+    margin-top:.10rem;
+}
+.reg_login a{
+    margin-right:.6rem;
+    float:right;
+}
+.reg_btn{
+    margin-top:.55rem;
+}
+.reg_bottom{
+    margin-top:.20rem;
+}

@@ -2,9 +2,429 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="修改port" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="manage.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
 </head>
 <body>
+<!-- 导航 -->
+<div class="nav">
+    <ul class="layui-nav">
+        <!--<li class="layui-nav-item">-->
+        <!--<a href="">控制台<span class="layui-badge">9</span></a>-->
+        <!--</li>-->
+        <!--<li class="layui-nav-item">-->
+        <!--<a href="">个人中心<span class="layui-badge-dot"></span></a>-->
+        <!--</li>-->
+        <li class="layui-nav-item ljr" lay-unselect="">
 
+            <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;">修改信息</a></dd>
+                <dd><a href="javascript:;">安全管理</a></dd>
+                <dd><a href="javascript:;">退出登录</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- 内容 -->
+<div class="banner">
+
+    <!-- 菜单栏 -->
+    <div class="left-menu">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class=" layui-nav-itemed">
+                <!--<a >EVISU</a>-->
+            </li>
+
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;" class="btn" data-i="0">商品管理</a>
+                <dd class="layui-nav-child">
+                    <dd>
+                        <a href="javascript:;">男装</a>
+                        <dl class="layui-nav-child">
+                            <dd class="btn" data-i="1"><a href="javascript:;">T恤</a></dd>
+                            <dd class="btn" data-i="2"><a href="javascript:;">卫衣</a></dd>
+                            <dd class="btn" data-i="3"><a href="javascript:;">运动裤</a></dd>
+                            <dd class="btn" data-i="4"><a href="javascript:;">夹克</a></dd>
+                            <dd class="btn" data-i="5"><a href="javascript:;">牛仔裤</a></dd>
+                            <dd class="btn" data-i="6"><a href="javascript:;">短裤</a></dd>
+                            <dd class="btn" data-i="7"><a href="javascript:;">内裤</a></dd>
+                            <dd class="btn" data-i="8"><a href="javascript:;">羽绒服</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">女装</a>
+                        <dl class="layui-nav-child">
+                            <dd class="btn" data-i="9"><a href="javascript:;">T恤</a></dd>
+                            <dd class="btn" data-i="10"><a href="javascript:;">卫衣</a></dd>
+                            <dd class="btn" data-i="11"><a href="javascript:;">运动裤</a></dd>
+                            <dd class="btn" data-i="12"><a href="javascript:;">夹克</a></dd>
+                            <dd class="btn" data-i="13"><a href="javascript:;">牛仔裤</a></dd>
+                            <dd class="btn" data-i="14"><a href="javascript:;">短裤</a></dd>
+                            <dd class="btn" data-i="15"><a href="javascript:;">连衣裙</a></dd>
+                            <dd class="btn" data-i="16"><a href="javascript:;">休闲裤</a></dd>
+                            <dd class="btn" data-i="17"><a href="javascript:;">外套</a></dd>
+                            <dd class="btn" data-i="18"><a href="javascript:;">短裙</a></dd>
+                            <dd class="btn" data-i="19"><a href="javascript:;">羽绒服</a></dd>
+                        </dl>
+                     </dd>
+                    <dd>
+                        <a href="javascript:;">童装</a>
+                        <dl class="layui-nav-child">
+                            <dd class="btn" data-i="20"><a href="javascript:;">T恤</a></dd>
+                            <dd class="btn" data-i="21"><a href="javascript:;">卫衣</a></dd>
+                            <dd class="btn" data-i="22"><a href="javascript:;">夹克</a></dd>
+                            <dd class="btn" data-i="23"><a href="javascript:;">牛仔裤</a></dd>
+                        </dl>
+                    </dd>
+            </li>
+
+            <li class="layui-nav-item">
+                <a href="javascript:;" class="btn" data-i="24">订单管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;" class="btn" data-i="25">待付款</a>
+
+                    </dd>
+                    <dd><a href="javascript:;" class="btn" data-i="26">待发货</a></dd>
+                    <dd><a href="javascript:;" class="btn" data-i="27">待收货</a></dd>
+                    <dd><a href="javascript:;" class="btn" data-i="28">已完成</a></dd>
+
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;" class="btn" data-i="29">用户管理</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;" class="btn" data-i="30">购物车管理</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;" class="btn" data-i="31">收货地址管理</a>
+            </li>
+        </ul>
+
+
+
+    </div>
+    <!-- 选项卡 -->
+    <div class="content">
+        <div class="card active-card">EVISU</div>
+
+        <!--T恤-->
+        <div class="card">
+            <div class="add-btn">添加商品</div>
+            <table class="tab">
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>intro</th>
+                    <th>img</th>
+                    <th>imglist</th>
+                    <th>count</th>
+                    <th>operation</th>
+                </tr>
+                <tr class="user-0">
+                    <td>T恤</td>
+                    <td>980</td>
+                    <td>好吃</td>
+                    <th>img</th>
+                    <th>imgist</th>
+                    <th>10086</th>
+
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <div class="delete">删除</div>
+                    </td>
+                </tr>
+                <tr class="user-1">
+                    <td>蛋糕</td>
+                    <td>980</td>
+                    <td>好吃</td>
+                    <th>img</th>
+                    <th>imgist</th>
+                    <th>10086</th>
+
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <div class="delete">删除</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--卫衣-->
+        <div class="card">
+            <div class="add-btn">添加商品</div>
+            <table class="tab">
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>intro</th>
+                    <th>img</th>
+                    <th>imglist</th>
+                    <th>count</th>
+                    <th>operation</th>
+                </tr>
+                <tr class="user-1">
+                    <td>卫衣</td>
+                    <td>980</td>
+                    <td>好吃</td>
+                    <th>img</th>
+                    <th>imgist</th>
+                    <th>10086</th>
+
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <div class="delete">删除</div>
+                    </td>
+                </tr>
+                <tr class="user-1">
+                    <td>蛋糕</td>
+                    <td>980</td>
+                    <td>好吃</td>
+                    <th>img</th>
+                    <th>imgist</th>
+                    <th>10086</th>
+
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <div class="delete">删除</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--运动裤-->
+        <div class="card">
+            <div class="add-btn">添加商品</div>
+            <table class="tab">
+            <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>intro</th>
+                <th>img</th>
+                <th>imglist</th>
+                <th>count</th>
+                <th>operation</th>
+            </tr>
+            <tr class="user-0">
+                <td>T恤</td>
+                <td>980</td>
+                <td>好吃</td>
+                <th>img</th>
+                <th>imgist</th>
+                <th>10086</th>
+
+                <td>
+                    <div class="view" onclick="update(this)">修改</div>
+                    <div class="delete">删除</div>
+                </td>
+            </tr>
+            <tr class="user-1">
+                <td>蛋糕啊</td>
+                <td>98099</td>
+                <td>好吃啊</td>
+                <th>img</th>
+                <th>imgist</th>
+                <th>1008611</th>
+
+                <td>
+                    <div class="view" onclick="update(this)">修改</div>
+                    <div class="delete">删除</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <!--夹克-->
+        <div class="card">夹克</div>
+        <div class="card">牛仔裤</div>
+        <div class="card">短裤</div>
+        <div class="card">内裤</div>
+        <div class="card">羽绒服</div>
+
+        <div class="card">T恤</div>
+        <div class="card">卫衣</div>
+        <div class="card">运动裤</div>
+        <div class="card">夹克</div>
+        <div class="card">牛仔裤</div>
+        <div class="card">短裤</div>
+        <div class="card">连衣裙</div>
+        <div class="card">休闲裤</div>
+        <div class="card">外套</div>
+        <div class="card">短裙</div>
+        <div class="card">羽绒服</div>
+
+
+        <div class="card">T恤</div>
+        <div class="card">卫衣</div>
+        <div class="card">夹克</div>
+        <div class="card">牛仔裤</div>
+        <div class="card">订单管理</div>
+        <!--待付款-->
+        <div class="card">待付款</div>
+        <!--待发货-->
+        <div class="card order-m">
+            <table class="tab">
+            <tr>
+                <th>ID</th>
+                <th>userid</th>
+                <th>goodlist</th>
+                <th>timeset</th>
+                <th>status</th>
+
+            </tr>
+            <tr class="user-0">
+                <td>1</td>
+                <td>无情</td>
+                <td>休闲男外套_数量_大小</td>
+                <td>2019年12月8日 23:32:43</td>
+                <td>待发货</td>
+            </tr>
+            </table>
+        </div>
+        <!--待收货-->
+        <div class="card">
+            <table class="tab">
+                <tr>
+                    <th>ID</th>
+                    <th>userid</th>
+                    <th>goodlist</th>
+                    <th>timeset</th>
+                    <th>status</th>
+                </tr>
+                <tr class="user-0">
+                    <td>1</td>
+                    <td>无情</td>
+                    <td>休闲男外套_数量_大小</td>
+                    <td>2019年12月8日 23:32:43</td>
+                    <td>待收货</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card">已完成</div>
+
+        <div class="card">用户管理</div>
+        <!--购物车列表-->
+        <div class="card">
+            <table class="tab">
+                <tr>
+                    <th>id</th>
+                    <th>userid</th>
+                    <th>goodid</th>
+                    <th>size</th>
+                    <th>count</th>
+                </tr>
+                <tr class="user-0">
+                    <td>1</td>
+                    <td>温柔</td>
+                    <td>休闲男装</td>
+                    <th>xxl</th>
+                    <th>889</th>
+
+                </tr>
+                <tr class="user-1">
+                    <td>2</td>
+                    <td>关耳</td>
+                    <td>休闲女装</td>
+                    <th>x</th>
+                    <th>10086</th>
+
+                </tr>
+            </table>
+        </div>
+        <!--收货地址-->
+        <div class="card">
+            <table class="tab">
+                <tr>
+                    <th>ID</th>
+                    <th>userid</th>
+                    <th>name</th>
+                    <th>tel</th>
+                    <th>region</th>
+                    <th>address</th>
+                    <th>atatus</th>
+                    <th>operation</th>
+                </tr>
+                <tr class="user-1">
+                    <td>1</td>
+                    <td>无情</td>
+                    <td>张鑫</td>
+                    <td>18292946109</td>
+                    <td>西安市雁塔区</td>
+                    <th>丈八沟街道瞪羚一路</th>
+                    <th>默认</th>
+
+
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <!--<div class="delete">删除</div>-->
+                    </td>
+                </tr>
+                <tr class="user-1">
+                    <td>2</td>
+                    <td>冷酷</td>
+                    <td>罗鹏瑞</td>
+                    <td>120120120120</td>
+                    <td>西安市雁塔区</td>
+                    <th>丈八沟街道瞪羚一路</th>
+                    <th>默认</th>
+
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <!--<div class="delete">删除</div>-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+</div>
+<!-- 遮罩层 -->
+<div class="mask"></div>
+<!-- 修改弹框 -->
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+
+    <!-- 修改弹框 -->
+    <div class="modal">
+        <div class="box">
+            <span>商品名称:</span>
+            <input type="text" class="g-name">
+        </div>
+        <div class="box">
+            <span>商品价格:</span>
+            <input type="text" class="g-price">
+        </div>
+        <div class="box">
+            <span>商品介绍:</span>
+            <input type="text" class="g-intro">
+        </div>
+        <div class="box">
+            <span>商品图片:</span>
+            <div class="border">点击选择文件</div>
+            <input type="file" class="up-img">
+            <button class="up-img-btn">上传</button>
+                <img src="" class="up-res" alt="">
+        </div>
+        <div class="box">
+            <span>详情信息列表:</span>
+            <div class="border border1">点击选择文件</div>
+            <input type="file" class="g-imglist">
+            <button class="up-img-btn2">上传</button>
+                <div class="up-imglist"></div>
+        </div>
+        <div class="box">
+            <span>商品数量:</span>
+            <input type="text" class="g-count">
+        </div>
+        <div class="btns">
+            <div class="exit">取消</div>
+            <div class="sure">确定</div>
+        </div>
+    </div>
+
+</div>
+<script src="layui/layui.all.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="manage.js"></script>
+<script src="upload.js"></script>
 </body>
 </html>
