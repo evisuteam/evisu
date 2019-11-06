@@ -117,34 +117,27 @@
             <div class="add-btn">添加商品</div>
             <table class="tab">
                 <tr>
-                    <th>name</th>
-                    <th>price</th>
-                    <th>intro</th>
+                    <th>商品名称</th>
+                    <th>尺码</th>
+                    <th>价格</th>
+                    <th>货号</th>
+                    <th>销量</th>
+                    <th>图片</th>
+                    <th>图片列表</th>
+                    <th>产品信息</th>
+                    <th>操作</th>
+                </tr>
+
+                <tr class="user-1">
+                    <td>羽绒服</td>
+                    <td>x</td>
+                    <td>4400</td>
+                    <th>1EAHTM9NJ707XX</th>
+                    <th>100</th>
                     <th>img</th>
                     <th>imglist</th>
-                    <th>count</th>
-                    <th>operation</th>
-                </tr>
-                <tr class="user-0">
-                    <td>T恤</td>
-                    <td>980</td>
-                    <td>好吃</td>
-                    <th>img</th>
-                    <th>imgist</th>
-                    <th>10086</th>
+                    <th>XXXXX</th>
 
-                    <td>
-                        <div class="view" onclick="update(this)">修改</div>
-                        <div class="delete">删除</div>
-                    </td>
-                </tr>
-                <tr class="user-1">
-                    <td>蛋糕</td>
-                    <td>980</td>
-                    <td>好吃</td>
-                    <th>img</th>
-                    <th>imgist</th>
-                    <th>10086</th>
 
                     <td>
                         <div class="view" onclick="update(this)">修改</div>
@@ -377,8 +370,6 @@
             </table>
         </div>
 </div>
-<!-- 遮罩层 -->
-<div class="mask"></div>
 <!-- 修改弹框 -->
     <!-- 遮罩层 -->
     <div class="mask"></div>
@@ -390,30 +381,38 @@
             <input type="text" class="g-name">
         </div>
         <div class="box">
-            <span>商品价格:</span>
+            <span>尺码:</span>
             <input type="text" class="g-price">
         </div>
         <div class="box">
-            <span>商品介绍:</span>
+            <span>价格:</span>
             <input type="text" class="g-intro">
         </div>
         <div class="box">
+            <span>货号:</span>
+            <input type="text" class="g-number">
+        </div>
+        <div class="box">
+            <span>销量:</span>
+            <input type="text" class="g-count">
+        </div>
+        <div class="box">
             <span>商品图片:</span>
-            <div class="border">点击选择文件</div>
-            <input type="file" class="up-img">
+            <!--<div class="border">点击选择文件</div>-->
+            <input type="text" class="up-img">
             <button class="up-img-btn">上传</button>
                 <img src="" class="up-res" alt="">
         </div>
         <div class="box">
             <span>详情信息列表:</span>
-            <div class="border border1">点击选择文件</div>
-            <input type="file" class="g-imglist">
+            <!--<div class="border border1">点击选择文件</div>-->
+            <input type="text" class="g-imglist">
             <button class="up-img-btn2">上传</button>
-                <div class="up-imglist"></div>
+            <div class="up-imglist"></div>
         </div>
         <div class="box">
-            <span>商品数量:</span>
-            <input type="text" class="g-count">
+            <span>产品信息:</span>
+            <input type="text" class="g-detail">
         </div>
         <div class="btns">
             <div class="exit">取消</div>
@@ -424,7 +423,7 @@
 </div>
 <script src="layui/layui.all.js"></script>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="manage.js"></script>
 <script src="upload.js"></script>
+<script src="manage.js"></script>
 </body>
 </html>

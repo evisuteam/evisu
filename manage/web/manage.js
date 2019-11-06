@@ -2,7 +2,7 @@
 let flag; //用来标记是修改还是添加，1代表修改，0代表添加
 let upId; //要修改的数据的 id 值
 let trc;
-let upFn;
+// let upFn;
 let btns = $('.btn');
 let cards = $('.card');
 let prevBtnIndex = 0;
@@ -51,10 +51,12 @@ $('.sure').click(function(){
     //获取信息
     const gname = $('.g-name').val();
     const gprice = $('.g-price').val();
+    const gnumber =$('.g-number').val();
     const gintro = $('.g-intro').val();
+    const gcount = $('.g-count').val();
     const gimg = $('.up-res').attr('src');
     const gimglist = $('.up-imglist').children().children('.img-list-bs');
-    const gcount = $('.g-count').val();
+    const gdetail =$('.g-detail').val();
 
     for(let i = 0;i < gimglist.length;i++){
         let srcs = $(gimglist[i]).attr('src');
@@ -62,22 +64,23 @@ $('.sure').click(function(){
     }
     let ggimglist = imglistArr.join('|');
 
-    flag ? up(gname,gprice,gintro,gimg,ggimglist,gcount) : insert(gname,gprice,gintro,gimg,ggimglist,gcount);
+    flag ? up(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) : insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail);
 });
 
-function insert(gname,gprice,gintro,gimg,gimglist,gcount) {
+function insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) {
     //如果输入的数据都符合规则，就将数据添加到数据库
-    if(gname && gprice && gintro && gimg && gimglist && gcount){
+    if(gname && gprice && gnumber &&gintro && gcount && gimg && gimglist && gdetail){
         //点击确定事件 添加的ajax的请求
         $.ajax({
             type:'post',
-            url:'../../controller/ProductDao.php',
+            url:'../controller/ProductDao.php',
             data:{
                 type: 'insert',
-                gname,gprice,gintro,gimg,gimglist,gcount
+                gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail
             },
             success(res){
                 //解析res
+                console.log(res);
                 const obj = JSON.parse(res);
                 if(obj.code){
                     alert('添加成功');
@@ -88,12 +91,14 @@ function insert(gname,gprice,gintro,gimg,gimglist,gcount) {
                     <tr>
                         <td>${gname}</td>
                         <td>${gprice}</td>
+                        <td>${gnumber}</td>
                         <td>${gintro}</td>
+                        <td>${gcount}</td>
                         <td>
                             <img src="${gimg}" alt="">
                         </td>
                         <td class="i-list"></td>
-                        <td>${gcount}</td>
+                        <td>${gdetail}</td>
                         <td>
                             <div class="view" onclick="update(this)" data-id="${obj.id}">修改</div>
                             <div class="delete" onclick = "del(this)" data-id="${obj.id}">删除</div>
@@ -136,11 +141,13 @@ function update(btn) {
     console.log(upIndex);
     $('.g-name').val(trc.eq(0).text());
     $('.g-price').val(trc.eq(1).text());
-    $('.g-intro').val(trc.eq(2).text());
-    $('.up-res').attr('src',trc.eq(3).children("img").attr('src'));
+    $('.g-number').val(trc.eq(3).text());
+    $('.g-intro').val(trc.eq(4).text());
+    $('.g-count').val(trc.eq(5).text());
+    $('.up-res').attr('src',trc.eq(6).children("img").attr('src'));
     //获取商品详图路径列表
     let imglist = [];
-    const list = trc.eq(4).children();
+    const list = trc.eq(7).children();
     console.log(list);
     for(let i = 0; i < list.length; i++){
         imglist.push(list[i].src);
@@ -155,18 +162,18 @@ function update(btn) {
         `;
         $('.up-imglist').append(li);
     }
-    $('.g-count').val(trc.eq(5).text());
+    $('.g-detail').val(trc.eq(8).text());
 }
 
 //修改数据
-function up(gname,gprice,gintro,gimg,gimglist,gcount) {
+function up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) {
     $.ajax({
         type:'post',
         url:'../../controller/ProductDao.php',
         data:{
             type:'update',
             id:upId,
-            gname,gprice,gintro,gimg,gimglist,gcount
+            gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail
         },
         success(res) {
             console.log(res);
@@ -178,10 +185,12 @@ function up(gname,gprice,gintro,gimg,gimglist,gcount) {
                 $('.modal input').val('');
                 trc.eq(0).text(gname);
                 trc.eq(1).text(gprice);
-                trc.eq(2).text(gintro);
-                trc.eq(3).children("img").attr('src',gimg);
+                trc.eq(2).text(gnumber);
+                trc.eq(3).text(gintro);
+                trc.eq(4).text(gcount);
+                trc.eq(5).children("img").attr('src',gimg);
 
-                trc.eq(5).text(gcount);
+                trc.eq(7).text(gdetail);
             }else {
                 alert('修改失败');
             }
@@ -193,25 +202,26 @@ function up(gname,gprice,gintro,gimg,gimglist,gcount) {
 function select(){
     $.ajax({
         type:'post',
-        url:'../../controller/ProductDao.php',
+        url:'../controller/ProductDao.php',
         data:{
             type:'select'
         },
         success(res){
+            console.log(res);
             const arr = JSON.parse(res);
             for(let item of arr){
                 let el = $(`
                     <tr>
                         <td>${item.name}</td>
                         <td>${item.price}</td>
+                        <td>${item.number}</td>
                         <td>${item.intro}</td>
+                        <td>${item.count}</td>
                         <td>
                             <img src="${item.img}" alt="">
                         </td>
-                        <td class="i-list">
-                            
-                        </td>
-                        <td>${item.count}</td>
+                        <td class="i-list"></td>
+                        <td>${item.detail}</td>
                         <td>
                             <div class="view" data-id="${item.ID}" onclick="update(this)">修改</div>
                             <div class="delete" data-id="${item.ID}" onclick="del(this)">删除</div>
