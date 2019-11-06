@@ -1,0 +1,209 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border:none;
+    list-style: none;
+}
+.nav{
+    height: 80px;
+    background: #3c8dbc;
+}
+.banner{
+    display: flex;
+    /* flex里面的子元素的高度是按照最高的高度来的 */
+}
+.left-menu{
+    width: 200px;
+    height: calc(100vh - 80px);
+    background: #1a2225;
+    cursor: pointer;
+    color:#eee;
+    font-weight: lighter;
+}
+ul{
+    text-align: center;
+    margin-top: 20px;
+}
+li{
+    padding:10px 0;
+}
+.content{
+    width: calc(100vw - 200px);
+    padding: 20px;
+    overflow: auto;
+    height: calc(100vh - 80px);
+}
+.mask{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: .5;
+    position: fixed;
+    top:0;
+    display: none;
+}
+.modal{
+    width: 500px;
+    position: fixed;
+    left: calc((100vw - 500px) / 2);
+    top: 100px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+    padding: 20px;
+    display: none;
+}
+.box{
+    margin-bottom: 20px;
+}
+.box span{
+    font-size: 18px;
+    font-weight: bolder;
+    width: 110px;
+    display: inline-block;
+    text-align: right;
+    font-family: '楷体';
+}
+.box input{
+    width: 345px;
+    outline:none;
+    border:1px solid #eee;
+    border-radius: 3px;
+    padding: 10px;
+}
+.btns{
+    text-align: right;
+}
+.btns>div, .add-btn{
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border:1px solid #bbb;
+    cursor: pointer;
+    color:#444;
+}
+.add-btn{
+    background:#ffb924;
+    color:#fff;
+    border:1px solid orange;
+    margin-bottom: 20px;
+}
+.btns .sure{
+    color:#fff;
+    background: #337ab7;
+    border:1px solid #2e6da4;
+}
+
+.tab{
+    width:100%;
+    border-collapse: collapse;
+    color: #666666;
+    /*font-size: lighter;!* 字体粗细 *!*/
+    text-align: left;
+    font-size:16px;
+}
+.tab th, .tab td{
+    border: 1px solid #eee;
+    padding:10px;
+}
+th,td
+{
+    text-align: center;
+}
+.tab tr:nth-child(1){
+    background: #f2f5e7;
+}
+/* 修改和删除按钮 */
+.view, .delete{
+    display: inline-block;
+    color: white;
+    padding:3px 10px;
+    background:#ee3434;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.view{
+    background: #2785b4;
+}
+.card{
+    display: none;
+}
+.active-card{
+    display: block;
+}
+.active-btn{
+    background: #000;
+}
+.tab img{
+    width: 80px;
+}
+.modal{
+    height: 500px;
+    width: 600px;
+    overflow-y: scroll;
+}
+.modal img{
+    width: 70px;
+    height:70px;
+}
+.up-img-btn,.up-img-btn2{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    outline: none;
+    background: #F05;
+    padding: 11px;
+    color: #eef;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.box:nth-child(6){
+    position: relative;
+    margin-bottom: 0;
+}
+.box:nth-child(6)>img{
+    margin-left: 115px;
+}
+.box:nth-child(5){
+    position: relative;
+}
+.border,.border1{
+    position: absolute;
+    top: 0;
+    left: 115px;
+    width: 346px;
+    height: 47px;
+    color: #bbb;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding:8px;
+}
+.border1,.up-img-btn2{
+    top: 435px;
+}
+.up-img,.g-imglist{
+    /*opacity: 0;*/
+}
+.up-imglist{
+    height: 94px;
+    margin-left: 110px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+.imgs-src{
+    display: inline-block;
+    position: relative;
+    margin:5px;
+}
+.imgs-btn {
+    display: inline-block;
+    position: absolute;
+    right: -6px;
+    top: 2px;
+    padding: 2px;
+    color: #ffffff;
+    border-radius: 50%;
+    background: red;
+    vertical-align: top;
+}

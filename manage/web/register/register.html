@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="../页头/css/index.css">
+    <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="../页尾/css/index-1.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="index-head"></div>
+    
+    <!-- 注册 -->
+    <div class="register">
+        <div class="reg_box">
+            <!-- 地区 -->
+            <select class="login_tab login_text">
+                <option value="">中国</option>
+                <option value="">中国澳门</option>
+                <option value="">中国台湾</option>
+                <option value="">中国香港</option>
+            </select>
+            <!-- 手机号 -->
+            <div class="login_tab login_num">
+                <div class="login_num_86">+86</div>
+                <input type="text" placeholder="请输入手机号" maxlength="11" class="login_inp login_p">
+                <p class="notice1"></p>
+            </div>
+            <!-- 短信验证码 -->
+            <div class="reg_code">
+                <input type="text" placeholder="短信验证码" maxlength="4" class="reg_inp reg_code_inp">
+                <span class="reg_code_btn get_code">发送验证码</span>
+                <p class="notice3"></p>
+            </div>
+            <!-- 密码 -->
+            <div class="login_tab login_pass">
+                <input type="password" placeholder="8-12位数字或字母" maxlength="12" class="login_inp login_code_pass">
+                <p class="notice2"></p>
+            </div>
+            <!-- 会员政策 -->
+            <div class="reg_des">
+                <input type="checkbox" checked/>
+                <span>我已仔细阅读、理解并同意诺誓<a>会员政策</a></span>
+            </div>
+            <!-- 已有账号 -->
+            <div class="reg_login">
+                <a href="../login/login.html">已有账号</a>
+            </div>
+            <!-- 创建账号按钮 -->
+            <div class="login_btn reg_btn"><a href="../login/login.html">创建账号</a></div>
+            <!-- 底部 -->
+            <div class="login_bottom reg_bottom">
+                <img src="../rose-img/login_car.png" alt="">
+                <!--<span>roseonly支持门店城市同城速递服务!</span>-->
+            </div>
+        </div>
+    </div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../login/login.js"></script>
+    <script src="../register/register.js"></script>
+    <script>
+        reg();
+        pswd();
+        getCode();
+    </script>
+</body>
+</html>
