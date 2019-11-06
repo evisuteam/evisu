@@ -15,16 +15,39 @@ switch($type){
     case 'insert':
         $Type1 = $_POST['Type1'];
         $Type2 = $_POST['Type2'];
-
-        insertProduct($pro);
+        $goodname = $_POST['goodname'];
+        $size = $_POST['size'];
+        $price = $_POST['price'];
+        $number = $_POST['number'];
+        $count = $_POST['count'];
+        $img = $_POST['img'];
+        $imglist = $_POST['imglist'];
+        $detail = $_POST['detail'];
+        $showimglist = $_POST['showimglist'];
+        $pro = new Pro($Type1,$Type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail,$showimglist);
+        $service->insertProduct($pro);
         break;
     case 'delete':
-        deleteProduct();
+        $id = $_POST['id'];
+        $service->deleteProduct($id);
         break;
     case 'update':
-
+        $id = $_POST['id'];
+        $Type1 = $_POST['Type1'];
+        $Type2 = $_POST['Type2'];
+        $goodname = $_POST['goodname'];
+        $size = $_POST['size'];
+        $price = $_POST['price'];
+        $number = $_POST['number'];
+        $count = $_POST['count'];
+        $img = $_POST['img'];
+        $imglist = $_POST['imglist'];
+        $detail = $_POST['detail'];
+        $showimglist = $_POST['showimglist'];
+        $pro = new Pro($Type1,$Type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail,$showimglist);
+        $service->updateProduct($id,$pro);
         break;
     case 'selete':
-
+        $service->selectProduct();
         break;
 }

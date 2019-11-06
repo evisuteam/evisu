@@ -13,7 +13,7 @@ class OrderService{
     }
     //查询订单
     function orderSelect(){
-        $sql = "select * from shoppingcart";
+        $sql = "select * from goolist";
         $res = $this->db->mysqli->query($sql);
         if($res){
             echo json_encode($res);//查询成功，将其转换成前端能识别的json字符串,返回
@@ -30,5 +30,22 @@ class OrderService{
         }else{
             echo '{"code":"0"}';//添加失败
         }
+    }
+    //删除订单
+    function orderDelete($id){
+        $sql = "delete from orderlist where ID='{$id}'";
+        $res = $this->db->mysqli->query($sql);
+        if($res){
+            echo '{"code":"1"}';//删除成功
+        }else{
+            echo '{"code":"0"}';//删除失败
+        }
+    }
+
+    //根据状态值查询订单
+    //待发货查询
+    function waitreceiveSelect(){
+        $sql = "select * from orderlist where status='status'";
+
     }
 }
