@@ -5,8 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="../headand/css/headandfoot.css">
+    <link rel="stylesheet" href="../layui/layui-v2.5.4/layui/css/layui.css">
 </head>
 <body>
+    <div class="sdb-page-heade"></div>
+    <div class="layui-carousel sdbSlide" >
+        <div class="layui-carousel sdbSlideshow" id="test1">
+            <div carousel-item class="slideshowPhoto">
+                <div>
+                    <a href="../headand/headandfood.html"> 
+                        <img src="../imgs/pc01.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                            <img src="../imgs/pc02.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href=""><img src="../imgs/pc_8.jpg" alt=""></a>
+                </div>
+                <div>
+                    <a href="">
+                            <img src="../imgs/pc_9.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                            <img src="../imgs/payment_method.png" alt="">
+                    </a>
+                </div>
+        </div>
+       
+        </div>
+        
+        <div class="sdbSlideshowTwoPhotos">
+            <div class="sdbSlideshowTwoPhotosLeft AboutClothing">
+                <a href="">
+                    <img src="../imgs/file_1.jpg" alt="">
+                </a>
+            </div>
+            <div class="sdbSlideshowTwoPhotosMiddle AboutClothing">
+                <div class="sdbSlideshowTwoPhotosMiddleTop">选购最新秋冬系列</div>
+                <span>
+                    <a href="" class="sdbSlideshowTwoPhotosMiddleMan">男装</a>
+                </span>
+                <span>
+                    <a href="" class="sdbSlideshowTwoPhotosMiddleWoman">女装</a>
+                </span>
+            </div>
+            <div class="sdbSlideshowTwoPhotosRight AboutClothing">
+                <img src="../imgs/file_2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="sdbSecondSlideshow layui-carousel" id="test2">
+            <div class="sdbSecondPhoto" carousel-item >
+               <div>
+                    <a href="">
+                            <img src="../imgs/file_2.png" alt="">
+                    </a>
+               </div>
+               
+               <div>
+                  
+                <a href="">
+                            <img src="../imgs/file_8.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            
+    </div>
     
+    <div class="sdbEnd">
+        <div class="sdbEndTop">
+            <h4>TOP SELLERS</h4>
+        </div>
+       
+        <ol class="sdbEndBottom10">
+            <!-- <li class="classsdbEndBottomOne">
+                <a href="">
+                    <div class="sdbEndPhoto">
+                        <img src="../imgs/01.jpg" alt="">
+                    </div>
+                    <div>
+                        <div class="sdbEndName">EVISU 19AW 男士标志印花羽绒服外套 1EAADM9NJ703XX</div>
+                        <div class="sdbEndPrice">￥ 3,299.00</div>
+                    </div>
+                </a>
+            </li>                -->
+        </ol>
+       
+        
+    </div>
+
+    <div class="sdb-foots"></div>
+     
+       <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+     
+      <script src="../layui/layui-v2.5.4/layui/layui.all.js"></script>
+      <script src="./home.js"></script>
+      <script src="../headand/handangfoot.js"></script>
+      <script>
+      layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+          elem: '#test1'
+          ,width: '100%' //设置容器宽度
+          ,arrow: 'always' 
+          ,height:'500px'
+          //始终显示箭头
+          //,anim: 'updown' //切换动画方式
+        });
+      });
+
+      layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+          elem: '#test2'
+          ,width: '100%' //设置容器宽度
+          ,arrow: 'always' 
+          ,height:'500px'
+          //始终显示箭头
+          //,anim: 'updown' //切换动画方式
+        });
+      });
+      
+     
+      </script>
+ 
 </body>
 </html>

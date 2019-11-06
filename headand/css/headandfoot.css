@@ -9,10 +9,13 @@ a{
 
 .sdb-page-heade{
     position:fixed;
-    top: 10px;
+    padding-top: 10px;
+    top: 0;
     width: 100vw;
     height: 100px;
     border-bottom: 1px solid #f1f1f1;
+    z-index: 2;
+    background: #ffffff;
 }
 
 .head-top{
@@ -147,6 +150,26 @@ input::-webkit-input-placeholder { /* WebKit browsers */
 
 
 
+@media screen and (min-width: 1200px){
+    .head-top{
+        padding: 0 65px;
+    }
+}
+
+@media screen and (min-width :1024px){
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -155,7 +178,7 @@ input::-webkit-input-placeholder { /* WebKit browsers */
 .sdb-foots{
     margin-top: 10px;
     /* display: none; */
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100vw;
 }
