@@ -51,7 +51,7 @@ class AddressService
 
     //修改地址
     function updateAddress($id,$add){
-        $sql = "update goodlist set Type1='{$add->userId}',Type2='{$add->name}',goodname='{$add->region}',size='{$add->status}',price='{$pro->price}',number='{$pro->number}',count='{$pro->count}',img='{$pro->img}',imglist='{$pro->imglist}',detail='{$pro->detail}',showimglist='{$pro->showimglist}' where id='{$id}'";
+        $sql = "update goodlist set Type1='{$add->userId}',Type2='{$add->name}',goodname='{$add->region}',size='{$add->status}',price='{$add->price}',number='{$add->number}',count='{$add->count}',img='{$add->img}',imglist='{$add->imglist}',detail='{$add->detail}',showimglist='{$add->showimglist}' where id='{$id}'";
         $res = $this->db->mysqli->query($sql);
         var_dump($res);
         if($res){

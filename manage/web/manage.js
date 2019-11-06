@@ -47,6 +47,7 @@ $('.exit').click(function () {
 });
 //为弹框的确定按钮绑定点击事件
 $('.sure').click(function(){
+    console.log(111);
     let imglistArr = [];
     //获取信息
     const gname = $('.g-name').val();
@@ -58,13 +59,13 @@ $('.sure').click(function(){
     const gimglist = $('.up-imglist').children().children('.img-list-bs');
     const gdetail =$('.g-detail').val();
 
-    for(let i = 0;i < gimglist.length;i++){
+    for(let i = 0;i < gimglist.length; i++){
         let srcs = $(gimglist[i]).attr('src');
         imglistArr.push(srcs);
     }
     let ggimglist = imglistArr.join('|');
 
-    flag ? up(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) : insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail);
+    flag ? up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) : insert(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail);
 });
 
 function insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) {

@@ -24,7 +24,7 @@ class ProductService{
     }
     //添加商品
     function insertProduct($pro){
-        $sql = "insert into (Type1,Type2,goodname,size,price,number,count,img,imglist,detail,showimglist ) values ('{$pro->Type1}','{$pro->Type2}','{$pro->goodname}','{$pro->size}','{$pro->price}','{$pro->number}','{$pro->count}','{$pro->img}','{$pro->imglist}','{$pro->detail}','{$pro->showimglist}')";
+        $sql = "insert into (goodname,size,price,number,count,img,imglist,detail) values ('{$pro->Type1}','{$pro->Type2}','{$pro->goodname}','{$pro->size}','{$pro->price}','{$pro->number}','{$pro->count}','{$pro->img}','{$pro->imglist}','{$pro->detail}','{$pro->showimglist}')";
         $res = $this->db->mysqli->query($sql);
         if($res){
             echo json_encode($res);//添加成功,将其转换成前端能识别的json字符串，返回
