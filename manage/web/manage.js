@@ -47,36 +47,38 @@ $('.exit').click(function () {
 });
 //为弹框的确定按钮绑定点击事件
 $('.sure').click(function(){
+    console.log(111);
     let imglistArr = [];
     //获取信息
-    const gname = $('.g-name').val();
-    const gprice = $('.g-price').val();
-    const gnumber =$('.g-number').val();
-    const gintro = $('.g-intro').val();
-    const gcount = $('.g-count').val();
-    const gimg = $('.up-res').attr('src');
-    const gimglist = $('.up-imglist').children().children('.img-list-bs');
-    const gdetail =$('.g-detail').val();
+    const goodname = $('.g-goodname').val();
+    const size = $('.g-size').val();
+    const price = $('.g-price').val();
+    const number =$('.g-number').val();
+    const count = $('.g-count').val();
+    const img = $('.up-res').attr('src');
+    const imglist = $('.up-imglist').children().children('.img-list-bs');
+    const detail =$('.g-detail').val();
 
-    for(let i = 0;i < gimglist.length;i++){
-        let srcs = $(gimglist[i]).attr('src');
+    for(let i = 0;i < imglist.length;i++){
+        let srcs = $(imglist[i]).attr('src');
         imglistArr.push(srcs);
     }
     let ggimglist = imglistArr.join('|');
+    console.log(ggimglist);
 
-    flag ? up(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) : insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail);
+    flag ? up(goodname,size,price,number,count,img,ggimglist,detail) : insert(goodname,size,price,number,count,img,ggimglist,detail);
 });
 
-function insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) {
+function insert(goodname,size,price,number,count,img,imglist,detail) {
     //如果输入的数据都符合规则，就将数据添加到数据库
-    if(gname && gprice && gnumber &&gintro && gcount && gimg && gimglist && gdetail){
+    if(goodname && size && price && number && count && img && imglist && detail){
         //点击确定事件 添加的ajax的请求
         $.ajax({
             type:'post',
             url:'../controller/ProductDao.php',
             data:{
                 type: 'insert',
-                gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail
+                goodname,size,price,number,count,img,imglist,detail
             },
             success(res){
                 //解析res
@@ -89,16 +91,16 @@ function insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) {
                     //如果用户添加成功，需要在页面及时显示用户添加的新的内容，根据获取到的表单内容，创建一个tr，添加到表格中
                     const tr = $(`
                     <tr>
-                        <td>${gname}</td>
-                        <td>${gprice}</td>
-                        <td>${gnumber}</td>
-                        <td>${gintro}</td>
-                        <td>${gcount}</td>
+                        <td>${goodname}</td>
+                        <td>${size}</td>
+                        <td>${price}</td>
+                        <td>${number}</td>
+                        <td>${count}</td>
                         <td>
-                            <img src="${gimg}" alt="">
+                            <img src="${img}" alt="">
                         </td>
                         <td class="i-list"></td>
-                        <td>${gdetail}</td>
+                        <td>${detail}</td>
                         <td>
                             <div class="view" onclick="update(this)" data-id="${obj.id}">修改</div>
                             <div class="delete" onclick = "del(this)" data-id="${obj.id}">删除</div>
@@ -140,7 +142,8 @@ function update(btn) {
     upIndex = $(btn).parent().parent().index();
     console.log(upIndex);
     $('.g-name').val(trc.eq(0).text());
-    $('.g-price').val(trc.eq(1).text());
+    $('.g-size').val(trc.eq(1).text());
+    $('.g-price').val(trc.eq(2).text());
     $('.g-number').val(trc.eq(3).text());
     $('.g-intro').val(trc.eq(4).text());
     $('.g-count').val(trc.eq(5).text());
@@ -166,14 +169,14 @@ function update(btn) {
 }
 
 //修改数据
-function up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) {
+function up() {
     $.ajax({
         type:'post',
         url:'../../controller/ProductDao.php',
         data:{
             type:'update',
             id:upId,
-            gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail
+            gname,size,price,number,count,gimg,ggimglist,detail
         },
         success(res) {
             console.log(res);
@@ -184,13 +187,13 @@ function up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) {
                 $('.modal').fadeOut();
                 $('.modal input').val('');
                 trc.eq(0).text(gname);
-                trc.eq(1).text(gprice);
-                trc.eq(2).text(gnumber);
-                trc.eq(3).text(gintro);
-                trc.eq(4).text(gcount);
+                trc.eq(1).text(size);
+                trc.eq(2).text(price);
+                trc.eq(3).text(number);
+                trc.eq(4).text(count);
                 trc.eq(5).children("img").attr('src',gimg);
 
-                trc.eq(7).text(gdetail);
+                trc.eq(7).text(detail);
             }else {
                 alert('修改失败');
             }
@@ -213,9 +216,9 @@ function select(){
                 let el = $(`
                     <tr>
                         <td>${item.name}</td>
+                        <td>${item.size}</td>
                         <td>${item.price}</td>
                         <td>${item.number}</td>
-                        <td>${item.intro}</td>
                         <td>${item.count}</td>
                         <td>
                             <img src="${item.img}" alt="">

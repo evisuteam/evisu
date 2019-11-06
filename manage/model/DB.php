@@ -8,9 +8,9 @@
 
 class DB{
     private $host = 'localhost';
-    private $username = 'luo';
-    private $password = '111111';
-    private $database = 'evisu';
+    private $username = 'dage';
+    private $password = '123456';
+    private $database = 'XAH190603';
 
     public $mysql;
 
