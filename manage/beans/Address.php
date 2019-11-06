@@ -15,11 +15,11 @@ class Address{
 
     function __construct($userId,$name,$tel,$region,$address,$status)
     {
-        $this->userId;
-        $this->name;
-        $this->tel;
-        $this->region;
-        $this->address;
-        $this->status;
+        $this->userId = $userId;
+        $this->name = $name;
+        $this->tel = $tel;
+        $this->region = $region;
+        $this->address = $address;
+        $this->status = $status;
     }
 }

@@ -59,14 +59,23 @@ $('.sure').click(function(){
     const imglist = $('.up-imglist').children().children('.img-list-bs');
     const detail =$('.g-detail').val();
 
+<<<<<<< HEAD
     for(let i = 0;i < imglist.length;i++){
         let srcs = $(imglist[i]).attr('src');
+=======
+    for(let i = 0;i < gimglist.length; i++){
+        let srcs = $(gimglist[i]).attr('src');
+>>>>>>> 70d9fa0cfba5b1382830bc234543b2cd6c6bdb25
         imglistArr.push(srcs);
     }
     let ggimglist = imglistArr.join('|');
     console.log(ggimglist);
 
+<<<<<<< HEAD
     flag ? up(goodname,size,price,number,count,img,ggimglist,detail) : insert(goodname,size,price,number,count,img,ggimglist,detail);
+=======
+    flag ? up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) : insert(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail);
+>>>>>>> 70d9fa0cfba5b1382830bc234543b2cd6c6bdb25
 });
 
 function insert(goodname,size,price,number,count,img,imglist,detail) {

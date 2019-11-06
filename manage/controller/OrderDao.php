@@ -8,14 +8,32 @@
 require_once ('../model/OrderService.php');
 require_once ('../beans/Order.php');
 
-//$type = $_POST['type'];
+$type = $_POST['type'];
 $service = new OrderService();
 
-$uid = $_POST['uid'];
-$goodlist = $_POST['goodlist'];
-$timeset = $_POST['timeset'];
-$status = $_POST['status'];
-$num = $_POST['num'];
+switch($type){
+    case 'selete':
+        $service->orderSelect();
+        break;
+    case 'insert':
+        $userId = $_POST['userId'];
+        $goodlist = $_POST['goodlist'];
+        $timeset = $_POST['timeset'];
+        $status = $_POST['status'];
+        $number = $_POST['number'];
+        $order = new Order($userId,$goodlist,$timeset,$status,$number);
+        $service->orderInsert($order);
+        break;
+    case 'delete':
+        $id = $_POST['id'];
+        $service->orderDelete($id);
+}
+
+if($status == '0'){
+    $service->waitreceiveSelect();
+}else if($status == '1'){
+    $service->deliveredSelect();
+}
 
 $order = new Order($uid,$goodlist,$timeset,$status,$num);
 $service->orderSelect($order);
