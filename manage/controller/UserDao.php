@@ -14,7 +14,6 @@ $service = new UserService();
 if($type == 'login'){
     $name = $_POST['username'];
     $pswd = $_POST['password'];
-
     $service->userLogin($name,$pswd);
 }else if($type == 'register'){
     $name = $_POST['username'];
