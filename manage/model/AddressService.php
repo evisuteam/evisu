@@ -19,7 +19,7 @@ class AddressService
     function selecteAddress(){
 //        $sql = "select "
         $sql = "select * from address";
-        $res = $this->db->mysqli->query($sql);
+        $res = $this->db->query($sql);
         if($res){
             //查询成功,返回前端识别的json字符串
             echo json_encode($res);
@@ -30,8 +30,8 @@ class AddressService
     }
     //添加地址
     function insertAddress($add){
-        $sql = "insert into (userId,name,tel,region,address,status) values ('{$add->userId}','{$add->name}','{$add->tel}','{$add->region}','{$add->address}','{$add->status}')";
-        $res =$this->db->mysqli->query($sql);
+        $sql = "insert into address (userId,name,tel,region,address,status) values ('{$add->userId}','{$add->name}','{$add->tel}','{$add->region}','{$add->address}','{$add->status}')";
+        $res =$this->db->query($sql);
         if($res){
             echo json_encode($res);//添加成功,将其转换成前端能识别的json字符串，返回
         }else{
@@ -41,7 +41,7 @@ class AddressService
     //删除地址
     function deleteAddress($id){
         $sql = "delete from address where ID='{$id}'";
-        $res = $this->db->mysqli->query($sql);
+        $res = $this->db->query($sql);
         if($res){
             echo '{"code":"1"}';//删除成功
         }else{
@@ -52,10 +52,9 @@ class AddressService
     //修改地址
     function updateAddress($id,$add){
         $sql = "update goodlist set Type1='{$add->userId}',Type2='{$add->name}',goodname='{$add->region}',size='{$add->status}',price='{$add->price}',number='{$add->number}',count='{$add->count}',img='{$add->img}',imglist='{$add->imglist}',detail='{$add->detail}',showimglist='{$add->showimglist}' where id='{$id}'";
-        $res = $this->db->mysqli->query($sql);
-        var_dump($res);
+        $res = $this->db->query($sql);
+//        var_dump($res);
         if($res){
-//            echo '{"code":"1"}';//修改成功
             echo json_encode($res);//返回前端可以识别的json
         }else{
             echo '{"code":"0"}';//修改错误

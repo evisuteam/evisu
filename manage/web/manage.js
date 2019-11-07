@@ -80,7 +80,7 @@ function insert(type1,type2,goodname,size,price,number,count,img,imglist,detail)
         //点击确定事件 添加的ajax的请求
         $.ajax({
             type:'post',
-            url:'../controller/ProductDao.php',
+            url:'../controller/DetailsDao.php',
             data:{
                 type: 'insert',
                 Type1:a,
@@ -184,7 +184,11 @@ function update(btn) {
 function up(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
     $.ajax({
         type:'post',
+<<<<<<< HEAD
         url:'../controller/ProductDao.php',
+=======
+        url:'../../controller/DetailsDao.php',
+>>>>>>> ab75cd5b5afc9846df37f89885379c62ed3b825f
         data:{
             type:'update',
             id:upId,
@@ -218,7 +222,7 @@ function up(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
 function select(){
     $.ajax({
         type:'post',
-        url:'../controller/ProductDao.php',
+        url:'../controller/DetailsDao.php',
         data:{
             type:'select'
         },
@@ -266,7 +270,11 @@ function del(btn){
     //发送ajax请求删除数据
     $.ajax({
         type:'post',
+<<<<<<< HEAD
         url:'../controller/ProductDao.php',
+=======
+        url:'../../controller/DetailsDao.php',
+>>>>>>> ab75cd5b5afc9846df37f89885379c62ed3b825f
         data:{
             type:'delete',
             id

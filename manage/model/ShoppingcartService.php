@@ -17,8 +17,8 @@ class ShoppingcartService{
 
     //查询购物车
     function selectShopping(){
-        $sql = "selete * from shoppingcart";
-        $res = $this->db->mysqli->query($sql);
+        $sql = "select * from shoppingcart";
+        $res = $this->db->query($sql);
         if($res){
             echo json_encode($res);//返回json格式的数据
         }else{
@@ -27,10 +27,10 @@ class ShoppingcartService{
     }
     //添加
     function insertShopping($shop){
-        $sql = "insert into (userId,goodId,size,count) values ('{$shop->userId}','{$shop->goodId}','{$shop->size}','{$shop->count}')";
-        $res = $this->db->mysqli->query($sql);
+        $sql = "insert into shoppingcart (userId,goodId,size,count) values ('{$shop->userId}','{$shop->goodId}','{$shop->size}','{$shop->count}')";
+        $res = $this->db->query($sql);
         if($res){
-            echo json_encode($res);
+            echo '{"code":"1"}';//添加成功
         }else{
             echo '{"code":"0"}';//添加失败
         }
@@ -38,11 +38,11 @@ class ShoppingcartService{
     //删除
     function deleteShopping($id){
         $sql = "delete from shoppingcart where ID='{$id}'";
-        $res = $this->db->mysqli->query($sql);
+        $res = $this->db->query($sql);
         if($res){
             echo '{"code":"1"}';//删除成功
         }else{
-            echo '{"cdoe":"0"}';//删除失败
+            echo '{"code":"0"}';//删除失败
         }
     }
 }

@@ -18,7 +18,7 @@ class UserService{
     //登录
     function userLogin($name,$pswd){
         $sql = "select * from userlist where password='{$pswd}' and username='{$name}'";
-        $res = $this->db->mysqli->query($sql);
+        $res = $this->db->query($sql);
 //        var_dump($res);
         if($res->num_rows == 0){
             echo '{"code":"0"}';//用户未注册
@@ -37,8 +37,8 @@ class UserService{
 
     //注册
     function addUser($user){
-        $sql = "insert into userlist(username,password,tel,sex) values ('{$user->username}','{$user->password}','{$user->tel}','{$user->sex}')";
-        $res = $this->db->mysqli->query($sql);
+        $sql = "insert into userlist (username,password,tel,sex) values ('{$user->username}','{$user->password}','{$user->tel}','{$user->sex}')";
+        $res = $this->db->query($sql);
 //        var_dump($res); //true
         if($res){
             echo '{"code":"1"}';//成功
