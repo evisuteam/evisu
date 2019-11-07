@@ -2,29 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: LX
- * Date: 2019/11/1
- * Time: 17:11
+ * Date: 2019/11/6
+ * Time: 18:01
  */
 require_once ('../model/ProductService.php');
 require_once ('../beans/Product.php');
 
-$service = new ProductService();
 $type = $_POST['type'];
+$service = new ProductService();
 
 switch($type){
     case 'insert':
-//        $Type1 = $_POST['Type1'];
-//        $Type2 = $_POST['Type2'];
         $goodname = $_POST['goodname'];
-        $size = $_POST['size'];
         $price = $_POST['price'];
-        $number = $_POST['number'];
-        $count = $_POST['count'];
+        $intro = $_POST['intro'];
+        $size = $_POST['size'];
         $img = $_POST['img'];
-        $imglist = $_POST['imglist'];
-        $detail = $_POST['detail'];
-//        $showimglist = $_POST['showimglist'];
-        $pro = new Pro($goodname,$size,$price,$number,$count,$img,$imglist,$detail);
+        $count = $_POST['count'];
+        $pro = new Product($goodname,$price,$intro,$size,$img,$count);
         $service->insertProduct($pro);
         break;
     case 'delete':
@@ -33,21 +28,16 @@ switch($type){
         break;
     case 'update':
         $id = $_POST['id'];
-        $Type1 = $_POST['Type1'];
-        $Type2 = $_POST['Type2'];
         $goodname = $_POST['goodname'];
-        $size = $_POST['size'];
         $price = $_POST['price'];
-        $number = $_POST['number'];
-        $count = $_POST['count'];
+        $intro = $_POST['intro'];
+        $size = $_POST['size'];
         $img = $_POST['img'];
-        $imglist = $_POST['imglist'];
-        $detail = $_POST['detail'];
-        $showimglist = $_POST['showimglist'];
-        $pro = new Pro($Type1,$Type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail,$showimglist);
+        $count = $_POST['count'];
+        $pro = new Product($goodname,$price,$intro,$size,$img,$count);
         $service->updateProduct($id,$pro);
         break;
-    case 'selete':
+    case 'select':
         $service->selectProduct();
         break;
 }

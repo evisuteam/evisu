@@ -2,34 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: LX
- * Date: 2019/11/4
- * Time: 16:34
+ * Date: 2019/11/6
+ * Time: 18:02
  */
-class Pro{
-    public $Type1;
-    public $Type2;
+class Product{
     public $goodname;
-    public $size;
     public $price;
-    public $number;
-    public $count;
+    public $intro;
+    public $size;
     public $img;
-    public $imglist;
-    public $detail;
-    public $showimglist;
+    public $count;
 
-    function __construct($Type1,$Type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail,$showimglist)
+    function __construct($goodname,$price,$intro,$size,$img,$count)
     {
-        $this->Type1 = $Type1;
-        $this->Type2 = $Type2;
         $this->goodname = $goodname;
-        $this->size = $size;
         $this->price = $price;
-        $this->number = $number;
-        $this->count = $count;
+        $this->intro = $intro;
+        $this->size = $size;
         $this->img = $img;
-        $this->imglist = $imglist;
-        $this->detail = $detail;
-        $this->showimglist = $showimglist;
+        $this->count = $count;
     }
 }

@@ -74,7 +74,7 @@ function insert(gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail) {
         //点击确定事件 添加的ajax的请求
         $.ajax({
             type:'post',
-            url:'../controller/ProductDao.php',
+            url:'../controller/DetailsDao.php',
             data:{
                 type: 'insert',
                 gname,gprice,gnumber,gintro,gcount,gimg,gimglist,gdetail
@@ -170,7 +170,7 @@ function update(btn) {
 function up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) {
     $.ajax({
         type:'post',
-        url:'../../controller/ProductDao.php',
+        url:'../../controller/DetailsDao.php',
         data:{
             type:'update',
             id:upId,
@@ -203,7 +203,7 @@ function up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) {
 function select(){
     $.ajax({
         type:'post',
-        url:'../controller/ProductDao.php',
+        url:'../controller/DetailsDao.php',
         data:{
             type:'select'
         },
@@ -250,7 +250,7 @@ function del(btn){
     //发送ajax请求删除数据
     $.ajax({
         type:'post',
-        url:'../../controller/ProductDao.php',
+        url:'../../controller/DetailsDao.php',
         data:{
             type:'delete',
             id

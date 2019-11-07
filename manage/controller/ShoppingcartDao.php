@@ -24,7 +24,7 @@ switch($type){
         $service->insertShopping($shop);
         break;
     case 'delete':
-        $id = $_POST['id'];
+        $goodId = $_POST['goodId'];
         $service->deleteShopping($id);
         break;
 }
