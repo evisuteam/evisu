@@ -11,7 +11,6 @@ function menuChange(){
         btns[i].onclick = function(){
             // 获取当前按钮在btns列表中的下标
             var index = this.getAttribute('data-i');
-            console.log(index);
             // 让上一个被选中的按钮恢复默认样式
             // btns[prevBtnIndex].className = 'btn';
             // 改变当前的按钮样式
@@ -19,7 +18,7 @@ function menuChange(){
             // 根据下标找到与按钮对应的 card
             // 让上一个 card 隐藏，让当前 card 显示
             var prevClass = cards[prevBtnIndex].className.slice(0, -12);
-            console.log(prevClass);
+            // console.log(prevClass);
             cards[prevBtnIndex].className = prevClass;
             cards[index].className += ' active-card';
             prevBtnIndex = index;
@@ -47,89 +46,92 @@ $('.exit').click(function () {
 });
 //为弹框的确定按钮绑定点击事件
 $('.sure').click(function(){
-    console.log(111);
-    let imglistArr = [];
     //获取信息
+    const type1 = $('.g-type1').val();
+    const type2 = $('.g-type2').val();
     const goodname = $('.g-goodname').val();
     const size = $('.g-size').val();
     const price = $('.g-price').val();
     const number =$('.g-number').val();
     const count = $('.g-count').val();
     const img = $('.up-res').attr('src');
-    const imglist = $('.up-imglist').children().children('.img-list-bs');
+    const imgs = $('.up-imglist').children().children('.img-list-bs');
+
+    let imgArr =[];
+    for(let i=0; i< imgs.length;i++){
+          imgArr.push(imgs[i].src);
+    }
+    let imglist = imgArr.join('|');
     const detail =$('.g-detail').val();
 
-<<<<<<< HEAD
-    for(let i = 0;i < imglist.length;i++){
-        let srcs = $(imglist[i]).attr('src');
-=======
-    for(let i = 0;i < gimglist.length; i++){
-        let srcs = $(gimglist[i]).attr('src');
->>>>>>> 70d9fa0cfba5b1382830bc234543b2cd6c6bdb25
-        imglistArr.push(srcs);
-    }
-    let ggimglist = imglistArr.join('|');
-    console.log(ggimglist);
+    flag ? up(type1,type2,goodname,size,price,number,count,img,imglist,detail) : insert(type1,type2,goodname,size,price,number,count,img,imglist,detail);
 
-<<<<<<< HEAD
-    flag ? up(goodname,size,price,number,count,img,ggimglist,detail) : insert(goodname,size,price,number,count,img,ggimglist,detail);
-=======
-    flag ? up(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail) : insert(gname,gprice,gnumber,gintro,gcount,gimg,ggimglist,gdetail);
->>>>>>> 70d9fa0cfba5b1382830bc234543b2cd6c6bdb25
 });
 
-function insert(goodname,size,price,number,count,img,imglist,detail) {
+function insert(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
+
+
     //如果输入的数据都符合规则，就将数据添加到数据库
-    if(goodname && size && price && number && count && img && imglist && detail){
+    if(type1 && type2 &&goodname && size && price && number && count && img && imglist && detail){
+        if ( value == '男装'){
+            a = 0;
+        }
+        let a;
         //点击确定事件 添加的ajax的请求
         $.ajax({
             type:'post',
             url:'../controller/ProductDao.php',
             data:{
                 type: 'insert',
-                goodname,size,price,number,count,img,imglist,detail
+                Type1:a,
+                Type2:b,
+                type1,type2,goodname,size,price,number,count,img,imglist,detail
             },
-            success(res){
-                //解析res
+            success(res) {
+             //   解析res
                 console.log(res);
-                const obj = JSON.parse(res);
-                if(obj.code){
-                    alert('添加成功');
-                    $('.mask').fadeOut();
-                    $('.modal').fadeOut();
-                    //如果用户添加成功，需要在页面及时显示用户添加的新的内容，根据获取到的表单内容，创建一个tr，添加到表格中
-                    const tr = $(`
-                    <tr>
-                        <td>${goodname}</td>
-                        <td>${size}</td>
-                        <td>${price}</td>
-                        <td>${number}</td>
-                        <td>${count}</td>
-                        <td>
-                            <img src="${img}" alt="">
-                        </td>
-                        <td class="i-list"></td>
-                        <td>${detail}</td>
-                        <td>
-                            <div class="view" onclick="update(this)" data-id="${obj.id}">修改</div>
-                            <div class="delete" onclick = "del(this)" data-id="${obj.id}">删除</div>
-                        </td>
-                    </tr>`);
-                    //创建详情列表
-                    const imglist = gimglist.split('|');
-                    for(let img of imglist){
-                        let ni = $(`<img src="${img}">`);
-                        tr.children('.i-list').append(ni);
-                    }
-                    $('.tab').append(tr);
+                 const obj = JSON.parse(res);
+                    if(obj.code){
+                        alert('添加成功');
+                        $('.mask').fadeOut();
+                        $('.modal').fadeOut();
+                        //如果用户添加成功，需要在页面及时显示用户添加的新的内容，根据获取到的表单内容，创建一个tr，添加到表格中
+                        const tr = $(`
+                        <tr>
+                            <td>${type1}</td>
+                            <td>${type2}</td>
+                            <td>${goodname}</td>
+                            <td>${size}</td>
+                            <td>${price}</td>
+                            <td>${number}</td>
+                            <td>${count}</td>
+                            <td>
+                                <img src="${img}" alt="">
+                            </td>
+                            <td class="i-list"></td>
+                            <td>${detail}</td>
+                            <td>
+                                <div class="view" onclick="update(this)" data-id="${obj.id}">修改</div>
+                                <div class="delete" onclick = "del(this)" data-id="${obj.id}">删除</div>
+                            </td>
+                        </tr>`);
+                        //创建详情列表
+                        imglist = imglist.split('|');
+                        for(let img of imglist){
+                            let ni = $(`<img src="${img}">`);
+                            tr.children('.i-list').append(ni);
+                            console.log(imglist);
+                        }
+                        $('.tab').append(tr);
 
-                    //添加成功之后，清空输入框中的所有内容
-                    $('.modal input').val('');
-                    $('.up-res').attr('src','');
-                    $('.up-imglist').children().remove();
-                }else{
-                    alert('添加失败');
-                }
+                        //添加成功之后，清空输入框中的所有内容
+                        $('.modal input').val('');
+                        $('.up-res').attr('src','');
+                        $('.up-imglist').children().remove();
+
+                    }else{
+                        alert('添加失败');
+                    }
             },
             error(){
                 console.log('请求失败') ;
@@ -149,18 +151,19 @@ function update(btn) {
     //将要修改的这条信息的数据展示在弹框上
     trc = $(btn).parent().parent().children();
     upIndex = $(btn).parent().parent().index();
-    console.log(upIndex);
-    $('.g-name').val(trc.eq(0).text());
-    $('.g-size').val(trc.eq(1).text());
-    $('.g-price').val(trc.eq(2).text());
-    $('.g-number').val(trc.eq(3).text());
-    $('.g-intro').val(trc.eq(4).text());
-    $('.g-count').val(trc.eq(5).text());
-    $('.up-res').attr('src',trc.eq(6).children("img").attr('src'));
+    $('.g-type1').val(trc.eq(0).text());
+    $('.g-type2').val(trc.eq(1).text());
+    $('.g-goodname').val(trc.eq(2).text());
+    $('.g-size').val(trc.eq(3).text());
+    $('.g-price').val(trc.eq(4).text());
+    $('.g-number').val(trc.eq(5).text());
+    $('.g-count').val(trc.eq(6).text());
+    $('.up-res').attr('src',trc.eq(7).children("img").attr('src'));
+    console.log($('.up-img'));
     //获取商品详图路径列表
     let imglist = [];
-    const list = trc.eq(7).children();
-    console.log(list);
+    const list = trc.eq(8).children();
+
     for(let i = 0; i < list.length; i++){
         imglist.push(list[i].src);
     }
@@ -174,18 +177,18 @@ function update(btn) {
         `;
         $('.up-imglist').append(li);
     }
-    $('.g-detail').val(trc.eq(8).text());
+    $('.g-detail').val(trc.eq(9).text());
 }
 
 //修改数据
-function up() {
+function up(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
     $.ajax({
         type:'post',
-        url:'../../controller/ProductDao.php',
+        url:'../controller/ProductDao.php',
         data:{
             type:'update',
             id:upId,
-            gname,size,price,number,count,gimg,ggimglist,detail
+            type1,type2,goodname,size,price,number,count,img,imglist,detail
         },
         success(res) {
             console.log(res);
@@ -195,14 +198,15 @@ function up() {
                 $('.mask').fadeOut();
                 $('.modal').fadeOut();
                 $('.modal input').val('');
-                trc.eq(0).text(gname);
-                trc.eq(1).text(size);
-                trc.eq(2).text(price);
-                trc.eq(3).text(number);
-                trc.eq(4).text(count);
-                trc.eq(5).children("img").attr('src',gimg);
-
-                trc.eq(7).text(detail);
+                trc.eq(0).text(type1);
+                trc.eq(1).text(type2);
+                trc.eq(2).text(goodname);
+                trc.eq(3).text(size);
+                trc.eq(4).text(price);
+                trc.eq(5).text(number);
+                trc.eq(6).text(count);
+                trc.eq(7).children("img").attr('src',gimg);
+                trc.eq(8).text(detail);
             }else {
                 alert('修改失败');
             }
@@ -219,26 +223,27 @@ function select(){
             type:'select'
         },
         success(res){
-            console.log(res);
             const arr = JSON.parse(res);
             for(let item of arr){
                 let el = $(`
-                    <tr>
-                        <td>${item.name}</td>
-                        <td>${item.size}</td>
-                        <td>${item.price}</td>
-                        <td>${item.number}</td>
-                        <td>${item.count}</td>
-                        <td>
-                            <img src="${item.img}" alt="">
-                        </td>
-                        <td class="i-list"></td>
-                        <td>${item.detail}</td>
-                        <td>
-                            <div class="view" data-id="${item.ID}" onclick="update(this)">修改</div>
-                            <div class="delete" data-id="${item.ID}" onclick="del(this)">删除</div>
-                        </td>
-                    </tr>`);
+                        <tr>
+                            <td>${item.type1}</td>
+                            <td>${item.type2}</td>
+                            <td>${item.goodname}</td>
+                            <td>${item.size}</td>
+                            <td>${item.price}</td>
+                            <td>${item.number}</td>
+                            <td>${item.count}</td>
+                            <td>
+                                <img src="${item.img}" alt="">
+                            </td>
+                            <td class="i-list"></td>
+                            <td>${item.detail}</td>
+                            <td>
+                                 <div class="view" data-id="${item.ID}" onclick="update(this)">修改</div>
+                                 <div class="delete" data-id="${item.ID}" onclick="del(this)">删除</div>  
+                            </td>
+                        </tr>`);
                 //循环创建详情图列表
                 let imglist = item.imglist.split('|');
                 for(let img of imglist){
@@ -249,7 +254,7 @@ function select(){
                 $('.tab').append(el);
             }
         }
-    })
+    });
 }
 select();
 
@@ -261,7 +266,7 @@ function del(btn){
     //发送ajax请求删除数据
     $.ajax({
         type:'post',
-        url:'../../controller/ProductDao.php',
+        url:'../controller/ProductDao.php',
         data:{
             type:'delete',
             id
@@ -316,5 +321,44 @@ function delimgs(btn) {
     console.log(res);
 }
 
+
+/**JQ实现二级菜单联动**/
+var $major = $("#major");
+$("#college").change(function(){
+    var $college_name =  $("#college").val();
+    if("男装" == $college_name) {
+        $major.find("option").remove();
+        $major.append("<option>");
+        $major.append("<option>T恤");
+        $major.append("<option>卫衣");
+        $major.append("<option>运动裤");
+        $major.append("<option>夹克");
+        $major.append("<option>牛仔裤");
+        $major.append("<option>短裤");
+        $major.append("<option>内裤");
+        $major.append("<option>羽绒服");
+    }else if("女装" == $college_name) {
+        $major.find("option").remove();
+        $major.append("<option>");
+        $major.append("<option>T恤");
+        $major.append("<option>卫衣");
+        $major.append("<option>运动裤");
+        $major.append("<option>夹克");
+        $major.append("<option>牛仔裤");
+        $major.append("<option>短裤");
+        $major.append("<option>连衣裙");
+        $major.append("<option>休闲裤");
+        $major.append("<option>外套");
+        $major.append("<option>短裙");
+        $major.append("<option>羽绒服");
+    }else if("童装" == $college_name) {
+        $major.find("option").remove();
+        $major.append("<option>");
+        $major.append("<option>T恤");
+        $major.append("<option>卫衣");
+        $major.append("<option>夹克");
+        $major.append("<option>牛仔裤");
+    }
+});
 
 

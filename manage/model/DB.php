@@ -10,9 +10,9 @@ class DB{
     private $host = 'localhost';
     private $username = 'dage';
     private $password = '123456';
-    private $database = 'XAH190603';
+    private $database = 'evisu';
 
-    public $mysql;
+    public $mysqli;
 
     function __construct()
     {
@@ -29,10 +29,9 @@ class DB{
     }
 
     function query($sql){
-        $result = $this->query($sql);
+        $result = $this->mysqli->query($sql);
         //执行sql语句的数据类型
         $database = gettype($result);
-//        var_dump($database);
         if($database == 'object'){
             return $result->fetch_all(MYSQLI_ASSOC);
         }else if($database == 'boolean'){

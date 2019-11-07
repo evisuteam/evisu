@@ -8,13 +8,15 @@
 require_once ('../model/ProductService.php');
 require_once ('../beans/Product.php');
 
+
 $service = new ProductService();
+
 $type = $_POST['type'];
 
 switch($type){
     case 'insert':
-//        $Type1 = $_POST['Type1'];
-//        $Type2 = $_POST['Type2'];
+        $type1 = $_POST['type1'];
+        $type2 = $_POST['type2'];
         $goodname = $_POST['goodname'];
         $size = $_POST['size'];
         $price = $_POST['price'];
@@ -24,7 +26,7 @@ switch($type){
         $imglist = $_POST['imglist'];
         $detail = $_POST['detail'];
 //        $showimglist = $_POST['showimglist'];
-        $pro = new Pro($goodname,$size,$price,$number,$count,$img,$imglist,$detail);
+        $pro = new Pro($type1,$type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail);
         $service->insertProduct($pro);
         break;
     case 'delete':
@@ -33,8 +35,8 @@ switch($type){
         break;
     case 'update':
         $id = $_POST['id'];
-        $Type1 = $_POST['Type1'];
-        $Type2 = $_POST['Type2'];
+        $type1 = $_POST['type1'];
+        $type2 = $_POST['type2'];
         $goodname = $_POST['goodname'];
         $size = $_POST['size'];
         $price = $_POST['price'];
@@ -43,11 +45,11 @@ switch($type){
         $img = $_POST['img'];
         $imglist = $_POST['imglist'];
         $detail = $_POST['detail'];
-        $showimglist = $_POST['showimglist'];
-        $pro = new Pro($Type1,$Type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail,$showimglist);
+
+        $pro = new Pro($type1,$type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail);
         $service->updateProduct($id,$pro);
         break;
-    case 'selete':
+    case 'select':
         $service->selectProduct();
         break;
 }

@@ -6,7 +6,7 @@
     list-style: none;
 }
 .nav{
-    height: 80px;
+    height: 60px;
     background: #3c8dbc;
 }
 .banner{
@@ -66,7 +66,7 @@ li{
     font-family: '楷体';
 }
 .box input{
-    width: 345px;
+    width: 400px;
     outline:none;
     border:1px solid #eee;
     border-radius: 3px;
@@ -74,10 +74,11 @@ li{
 }
 .btns{
     text-align: right;
+    margin-right: 30px;
 }
 .btns>div, .add-btn{
     display: inline-block;
-    padding: 5px 10px;
+    padding: 8px 10px;
     border-radius: 5px;
     border:1px solid #bbb;
     cursor: pointer;
@@ -149,14 +150,19 @@ th,td
 }
 .up-img-btn,.up-img-btn2{
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 392px;
     outline: none;
     background: #F05;
-    padding: 11px;
+    padding: 14px;
     color: #eef;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
+}
+.up-img-btn{
+    right: 50px;
+}
+.up-img-btn2{
+    right: 50px
 }
 .box:nth-child(6){
     position: relative;
@@ -180,10 +186,11 @@ th,td
     padding:8px;
 }
 .border1,.up-img-btn2{
-    top: 435px;
+    top: 536px;
 }
 .up-img,.g-imglist{
     /*opacity: 0;*/
+
 }
 .up-imglist{
     height: 94px;
@@ -207,3 +214,17 @@ th,td
     background: red;
     vertical-align: top;
 }
+.ljr{
+    float: right;
+    margin-right: 50px;
+}
+#college,#major{
+    width: 400px;
+}
+.up-res{
+    margin-left: 115px;
+}
+.g-count{
+    margin-top: 20px;
+}
+

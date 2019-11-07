@@ -6,8 +6,8 @@
  * Time: 16:34
  */
 class Pro{
-    public $Type1;
-    public $Type2;
+    public $type1;
+    public $type2;
     public $goodname;
     public $size;
     public $price;
@@ -16,12 +16,12 @@ class Pro{
     public $img;
     public $imglist;
     public $detail;
-    public $showimglist;
+//    public $showimglist;
 
-    function __construct($Type1,$Type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail,$showimglist)
+    function __construct($type1,$type2,$goodname,$size,$price,$number,$count,$img,$imglist,$detail)
     {
-        $this->Type1 = $Type1;
-        $this->Type2 = $Type2;
+        $this->Type1 = $type1;
+        $this->Type2 = $type2;
         $this->goodname = $goodname;
         $this->size = $size;
         $this->price = $price;
@@ -30,6 +30,6 @@ class Pro{
         $this->img = $img;
         $this->imglist = $imglist;
         $this->detail = $detail;
-        $this->showimglist = $showimglist;
+//        $this->showimglist = $showimglist;
     }
 }

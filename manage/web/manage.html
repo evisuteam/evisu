@@ -12,12 +12,7 @@
 <!-- 导航 -->
 <div class="nav">
     <ul class="layui-nav">
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="">控制台<span class="layui-badge">9</span></a>-->
-        <!--</li>-->
-        <!--<li class="layui-nav-item">-->
-        <!--<a href="">个人中心<span class="layui-badge-dot"></span></a>-->
-        <!--</li>-->
+       <span>EVISU后台管理系统</span>
         <li class="layui-nav-item ljr" lay-unselect="">
 
             <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
@@ -35,15 +30,15 @@
     <!-- 菜单栏 -->
     <div class="left-menu">
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
-            <li class=" layui-nav-itemed">
-                <!--<a >EVISU</a>-->
-            </li>
+            <!--<li class=" layui-nav-itemed">-->
+                <!--&lt;!&ndash;<a >EVISU</a>&ndash;&gt;-->
+            <!--</li>-->
 
-            <li class="layui-nav-item layui-nav-itemed">
+            <li class="layui-nav-item">
                 <a href="javascript:;" class="btn" data-i="0">商品管理</a>
-                <dd class="layui-nav-child">
+                <dl class="layui-nav-child">
                     <dd>
-                        <a href="javascript:;">男装</a>
+                        <a href="javascript:;" >男装</a>
                         <dl class="layui-nav-child">
                             <dd class="btn" data-i="1"><a href="javascript:;">T恤</a></dd>
                             <dd class="btn" data-i="2"><a href="javascript:;">卫衣</a></dd>
@@ -56,7 +51,7 @@
                         </dl>
                     </dd>
                     <dd>
-                        <a href="javascript:;">女装</a>
+                        <a href="javascript:;" >女装</a>
                         <dl class="layui-nav-child">
                             <dd class="btn" data-i="9"><a href="javascript:;">T恤</a></dd>
                             <dd class="btn" data-i="10"><a href="javascript:;">卫衣</a></dd>
@@ -70,9 +65,9 @@
                             <dd class="btn" data-i="18"><a href="javascript:;">短裙</a></dd>
                             <dd class="btn" data-i="19"><a href="javascript:;">羽绒服</a></dd>
                         </dl>
-                     </dd>
+                    </dd>
                     <dd>
-                        <a href="javascript:;">童装</a>
+                        <a href="javascript:;" >童装</a>
                         <dl class="layui-nav-child">
                             <dd class="btn" data-i="20"><a href="javascript:;">T恤</a></dd>
                             <dd class="btn" data-i="21"><a href="javascript:;">卫衣</a></dd>
@@ -80,20 +75,21 @@
                             <dd class="btn" data-i="23"><a href="javascript:;">牛仔裤</a></dd>
                         </dl>
                     </dd>
-            </li>
-
-            <li class="layui-nav-item">
-                <a href="javascript:;" class="btn" data-i="24">订单管理</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="javascript:;" class="btn" data-i="25">待付款</a>
-
-                    </dd>
-                    <dd><a href="javascript:;" class="btn" data-i="26">待发货</a></dd>
-                    <dd><a href="javascript:;" class="btn" data-i="27">待收货</a></dd>
-                    <dd><a href="javascript:;" class="btn" data-i="28">已完成</a></dd>
 
                 </dl>
             </li>
+
+            <li class="layui-nav-item">
+            <a href="javascript:;" class="btn" data-i="24">订单管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;" class="btn" data-i="25">待付款</a></dd>
+                <dd><a href="javascript:;" class="btn" data-i="26">待发货</a></dd>
+                <dd><a href="javascript:;" class="btn" data-i="27">待收货</a></dd>
+                <dd><a href="javascript:;" class="btn" data-i="28">已完成</a></dd>
+
+            </dl>
+        </li>
+
             <li class="layui-nav-item">
                 <a href="javascript:;" class="btn" data-i="29">用户管理</a>
             </li>
@@ -103,6 +99,13 @@
             <li class="layui-nav-item">
                 <a href="javascript:;" class="btn" data-i="31">收货地址管理</a>
             </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;" class="btn" data-i="32">统计图</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;" class="btn" data-i="33">条形图</a></dd>
+                    <dd><a href="javascript:;" class="btn" data-i="34">饼图</a></dd>
+                </dl>
+            </li>
         </ul>
 
 
@@ -110,12 +113,29 @@
     </div>
     <!-- 选项卡 -->
     <div class="content">
-        <div class="card active-card">EVISU</div>
+        <div class="card active-card">
+            <div class="add-btn">添加商品</div>
+            <table class=" center tab order">
+                <tr>
+                <th>type1</th>
+                <th>type2</th>
+                <th>商品名称</th>
+                <th>尺码</th>
+                <th>价格</th>
+                <th>货号</th>
+                <th>销量</th>
+                <th>图片</th>
+                <th>图片列表</th>
+                <th>产品信息</th>
+                <th>操作</th>
+                </tr>
+            </table>
+        </div>
 
         <!--T恤-->
         <div class="card">
             <div class="add-btn">添加商品</div>
-            <table class="tab">
+            <table class="tab order">
                 <tr>
                     <th>商品名称</th>
                     <th>尺码</th>
@@ -128,63 +148,37 @@
                     <th>操作</th>
                 </tr>
 
-                <tr class="user-1">
-                    <td>羽绒服</td>
-                    <td>x</td>
-                    <td>4400</td>
-                    <th>1EAHTM9NJ707XX</th>
-                    <th>100</th>
-                    <th>img</th>
-                    <th>imglist</th>
-                    <th>XXXXX</th>
-
-
-                    <td>
-                        <div class="view" onclick="update(this)">修改</div>
-                        <div class="delete">删除</div>
-                    </td>
-                </tr>
             </table>
         </div>
         <!--卫衣-->
         <div class="card">
             <div class="add-btn">添加商品</div>
-            <table class="tab">
-                <tr>
-                    <th>name</th>
-                    <th>price</th>
-                    <th>intro</th>
-                    <th>img</th>
-                    <th>imglist</th>
-                    <th>count</th>
-                    <th>operation</th>
-                </tr>
-                <tr class="user-1">
-                    <td>卫衣</td>
-                    <td>980</td>
-                    <td>好吃</td>
-                    <th>img</th>
-                    <th>imgist</th>
-                    <th>10086</th>
+            <table class="layui-table center">
 
-                    <td>
-                        <div class="view" onclick="update(this)">修改</div>
-                        <div class="delete">删除</div>
-                    </td>
-                </tr>
-                <tr class="user-1">
-                    <td>蛋糕</td>
-                    <td>980</td>
-                    <td>好吃</td>
-                    <th>img</th>
-                    <th>imgist</th>
-                    <th>10086</th>
+                    <tr>
+                        <th>id</th>
+                        <th>userid</th>
+                        <th>goodid</th>
+                        <th>size</th>
+                        <th>count</th>
+                    </tr>
+                    <tr class="user-0">
+                        <td>1</td>
+                        <td>温柔</td>
+                        <td>休闲男装</td>
+                        <th>xxl</th>
+                        <th>889</th>
 
-                    <td>
-                        <div class="view" onclick="update(this)">修改</div>
-                        <div class="delete">删除</div>
-                    </td>
-                </tr>
+                    </tr>
+                    <tr class="user-1">
+                        <td>2</td>
+                        <td>关耳</td>
+                        <td>休闲女装</td>
+                        <th>x</th>
+                        <th>10086</th>
+
+                    </tr>
+
             </table>
         </div>
         <!--运动裤-->
@@ -192,44 +186,48 @@
             <div class="add-btn">添加商品</div>
             <table class="tab">
             <tr>
-                <th>name</th>
-                <th>price</th>
-                <th>intro</th>
-                <th>img</th>
-                <th>imglist</th>
-                <th>count</th>
-                <th>operation</th>
-            </tr>
-            <tr class="user-0">
-                <td>T恤</td>
-                <td>980</td>
-                <td>好吃</td>
-                <th>img</th>
-                <th>imgist</th>
-                <th>10086</th>
-
-                <td>
-                    <div class="view" onclick="update(this)">修改</div>
-                    <div class="delete">删除</div>
-                </td>
-            </tr>
-            <tr class="user-1">
-                <td>蛋糕啊</td>
-                <td>98099</td>
-                <td>好吃啊</td>
-                <th>img</th>
-                <th>imgist</th>
-                <th>1008611</th>
-
-                <td>
-                    <div class="view" onclick="update(this)">修改</div>
-                    <div class="delete">删除</div>
-                </td>
+                <th>商品名称</th>
+                <th>尺码</th>
+                <th>价格</th>
+                <th>货号</th>
+                <th>销量</th>
+                <th>图片</th>
+                <th>图片列表</th>
+                <th>产品信息</th>
+                <th>操作</th>
             </tr>
         </table>
         </div>
         <!--夹克-->
-        <div class="card">夹克</div>
+        <div class="card">
+            <div class="add-btn">添加商品</div>
+           <table class="layui-table center">
+            <colgroup>
+                <col width="100">
+                <col width="100">
+                <col width="150">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>商品ID</th>
+                <th>用户ID</th>
+                <th>用户信息</th>
+                <th>用户评价</th>
+                <th>评价时间</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>网名</td>
+                <td>评价是汉语词语，读音píngjià，意思是指对一件事或人物进行判断、分析后的结论。出自宋王栐《燕翼诒谋录》、徐朔方《前言》、《宋史·隐逸传上·戚同文》。</td>
+                <td>2019/6/8</td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
         <div class="card">牛仔裤</div>
         <div class="card">短裤</div>
         <div class="card">内裤</div>
@@ -257,7 +255,7 @@
         <div class="card">待付款</div>
         <!--待发货-->
         <div class="card order-m">
-            <table class="tab">
+            <table class="layui-table">
             <tr>
                 <th>ID</th>
                 <th>userid</th>
@@ -277,7 +275,7 @@
         </div>
         <!--待收货-->
         <div class="card">
-            <table class="tab">
+            <table class="layui-table">
                 <tr>
                     <th>ID</th>
                     <th>userid</th>
@@ -299,35 +297,35 @@
         <div class="card">用户管理</div>
         <!--购物车列表-->
         <div class="card">
-            <table class="tab">
-                <tr>
-                    <th>id</th>
-                    <th>userid</th>
-                    <th>goodid</th>
-                    <th>size</th>
-                    <th>count</th>
-                </tr>
-                <tr class="user-0">
-                    <td>1</td>
-                    <td>温柔</td>
-                    <td>休闲男装</td>
-                    <th>xxl</th>
-                    <th>889</th>
+            <table class="layui-table">
+            <tr>
+                <th>id</th>
+                <th>userid</th>
+                <th>goodid</th>
+                <th>size</th>
+                <th>count</th>
+            </tr>
+            <tr class="user-0">
+                <td>1</td>
+                <td>温柔</td>
+                <td>休闲男装</td>
+                <th>xxl</th>
+                <th>889</th>
 
-                </tr>
-                <tr class="user-1">
-                    <td>2</td>
-                    <td>关耳</td>
-                    <td>休闲女装</td>
-                    <th>x</th>
-                    <th>10086</th>
+            </tr>
+            <tr class="user-1">
+                <td>2</td>
+                <td>关耳</td>
+                <td>休闲女装</td>
+                <th>x</th>
+                <th>10086</th>
 
-                </tr>
-            </table>
+            </tr>
+        </table>
         </div>
         <!--收货地址-->
         <div class="card">
-            <table class="tab">
+            <table class="layui-table">
                 <tr>
                     <th>ID</th>
                     <th>userid</th>
@@ -377,16 +375,39 @@
     <!-- 修改弹框 -->
     <div class="modal">
         <div class="box">
+            <span>服装分类：</span>
+            <!--<select class="sel">-->
+                <!--<option value="volvo">男装</option>-->
+                <!--<option value="saab">女装</option>-->
+                <!--<option value="opel">童装</option>-->
+            <!--</select>-->
+            <select id="college" class="g-type1">
+                            <option >-----请选择------
+                           <option value="男装" class="g-type1">男装
+                           <option value="女装">女装
+                           <option value="童装">童装
+
+                       </select>
+
+        </div>
+        <div class="box">
+            <span>名称分类：</span>
+                <select id="major" class="g-type2">
+                    <option id="comment">-----请选择------
+                </select>
+
+        </div>
+        <div class="box">
             <span>商品名称:</span>
-            <input type="text" class="g-name">
+            <input type="text" class="g-goodname">
         </div>
         <div class="box">
             <span>尺码:</span>
-            <input type="text" class="g-price">
+            <input type="text" class="g-size">
         </div>
         <div class="box">
             <span>价格:</span>
-            <input type="text" class="g-intro">
+            <input type="text" class="g-price">
         </div>
         <div class="box">
             <span>货号:</span>
@@ -414,6 +435,7 @@
             <span>产品信息:</span>
             <input type="text" class="g-detail">
         </div>
+
         <div class="btns">
             <div class="exit">取消</div>
             <div class="sure">确定</div>

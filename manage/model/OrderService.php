@@ -8,7 +8,7 @@
 require_once ('DB.php');
 class OrderService{
     public $db;
-    function __contruct(){
+    function __construct(){
         $this->db = new DB();
     }
     //查询订单
