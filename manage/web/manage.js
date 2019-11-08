@@ -62,35 +62,32 @@ $('.sure').click(function(){
           imgArr.push(imgs[i].src);
     }
     let imglist = imgArr.join('|');
-    const detail =$('.g-detail').val();
+    const detail = $('.g-detail').val();
 
     flag ? up(type1,type2,goodname,size,price,number,count,img,imglist,detail) : insert(type1,type2,goodname,size,price,number,count,img,imglist,detail);
 
 });
 
 function insert(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
-
-
+    // console.log(type1,type2,goodname,size,price,number,count,img,imglist,detail);
     //如果输入的数据都符合规则，就将数据添加到数据库
-    if(type1 && type2 &&goodname && size && price && number && count && img && imglist && detail){
-        if ( value == '男装'){
-            a = 0;
-        }
-        let a;
+    if(type1 && type2 && goodname && size && price && number && count && img && imglist && detail){
+        // if ( value == '男装'){
+        //     a = 0;
+        // }
+        // let a;
         //点击确定事件 添加的ajax的请求
         $.ajax({
             type:'post',
-            url:'../controller/DetailsDao.php',
+            url:'../controller/ProductDao.php',
             data:{
-                type: 'insert',
-                Type1:a,
-                Type2:b,
+               type: 'insert',
                 type1,type2,goodname,size,price,number,count,img,imglist,detail
             },
             success(res) {
              //   解析res
-                console.log(res);
                  const obj = JSON.parse(res);
+                 // console.log(obj);
                     if(obj.code){
                         alert('添加成功');
                         $('.mask').fadeOut();
@@ -108,7 +105,10 @@ function insert(type1,type2,goodname,size,price,number,count,img,imglist,detail)
                             <td>
                                 <img src="${img}" alt="">
                             </td>
-                            <td class="i-list"></td>
+                            <td class="i-list">
+                                <!--<div class="i-list"></div>-->
+                            </td>
+                            
                             <td>${detail}</td>
                             <td>
                                 <div class="view" onclick="update(this)" data-id="${obj.id}">修改</div>
@@ -125,6 +125,7 @@ function insert(type1,type2,goodname,size,price,number,count,img,imglist,detail)
                         $('.tab').append(tr);
 
                         //添加成功之后，清空输入框中的所有内容
+                        $(".select").attr("lang",'0');
                         $('.modal input').val('');
                         $('.up-res').attr('src','');
                         $('.up-imglist').children().remove();
@@ -184,11 +185,9 @@ function update(btn) {
 function up(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
     $.ajax({
         type:'post',
-<<<<<<< HEAD
+
         url:'../controller/ProductDao.php',
-=======
-        url:'../../controller/DetailsDao.php',
->>>>>>> ab75cd5b5afc9846df37f89885379c62ed3b825f
+
         data:{
             type:'update',
             id:upId,
@@ -222,7 +221,7 @@ function up(type1,type2,goodname,size,price,number,count,img,imglist,detail) {
 function select(){
     $.ajax({
         type:'post',
-        url:'../controller/DetailsDao.php',
+        url:'../controller/ProductDao.php',
         data:{
             type:'select'
         },
@@ -270,17 +269,14 @@ function del(btn){
     //发送ajax请求删除数据
     $.ajax({
         type:'post',
-<<<<<<< HEAD
         url:'../controller/ProductDao.php',
-=======
-        url:'../../controller/DetailsDao.php',
->>>>>>> ab75cd5b5afc9846df37f89885379c62ed3b825f
         data:{
             type:'delete',
             id
         },
         //接收返回值，如果删除成功，将对应的tr从页面上移除
         success(res){
+            console.log(res);
             const obj = JSON.parse(res);
             if(obj.code){
                 alert('删除成功');
@@ -332,11 +328,12 @@ function delimgs(btn) {
 
 /**JQ实现二级菜单联动**/
 var $major = $("#major");
+
 $("#college").change(function(){
     var $college_name =  $("#college").val();
     if("男装" == $college_name) {
         $major.find("option").remove();
-        $major.append("<option>");
+        $major.append("<option>请选择");
         $major.append("<option>T恤");
         $major.append("<option>卫衣");
         $major.append("<option>运动裤");
@@ -347,7 +344,7 @@ $("#college").change(function(){
         $major.append("<option>羽绒服");
     }else if("女装" == $college_name) {
         $major.find("option").remove();
-        $major.append("<option>");
+        $major.append("<option>请选择");
         $major.append("<option>T恤");
         $major.append("<option>卫衣");
         $major.append("<option>运动裤");
@@ -361,7 +358,7 @@ $("#college").change(function(){
         $major.append("<option>羽绒服");
     }else if("童装" == $college_name) {
         $major.find("option").remove();
-        $major.append("<option>");
+        $major.append("<option>请选择");
         $major.append("<option>T恤");
         $major.append("<option>卫衣");
         $major.append("<option>夹克");
@@ -370,3 +367,50 @@ $("#college").change(function(){
 });
 
 
+
+$('.btn1').each(function(){
+    $(this).click(function(){
+        const _type2 = $(this).attr('data-i');
+        $.ajax({
+            type:'post',
+            url:'../../controller/ProductDao.php',
+            data:{
+                type:'typelist',
+                // $college_name,
+                _type2
+            },
+            success(res){
+                $('.smallcard tbody').html('');
+                const arr1= JSON.parse(res);
+                console.log(arr1);
+                for(let item of arr1){
+                    let el = $(`
+                            <tr>
+                                <td>${item.name}</td>
+                                <td>${item.capacity}</td>
+                                <td>${item.price}</td>
+                                <td>${item.intro}</td>
+                                <td>${item.count}</td>
+                                <td>
+                                    <img src="${item.img}" alt="">
+                                </td>
+                                <td class="td-longimg">
+                                    <div class="td-div">
+                                        <img src="${item.imglist}" alt="">
+                                    </div>
+                                </td>
+                                <td>${item.attrlist}</td>
+                                <td>
+                                    <button type="button"
+                                        class="layui-btn layui-btn-normal layui-btn-sm view" data-id="${item.ID}" onclick="update(this)">修改<tton>
+                                    <button type="button"
+                                        class="layui-btn layui-btn-warm layui-btn-sm delete" data-id="${item.ID}" onclick="del(this)">删除<tton>
+                                </td>
+                            </tr>
+                    `);
+                    $('.smallcard').append(el);
+                }
+            }
+        })
+    })
+});

@@ -293,8 +293,39 @@
             </table>
         </div>
         <div class="card">已完成</div>
+            <!--用户管理-->
+        <div class="card">
+            <div class="add-btn">添加商品</div>
+            <table class="layui-table center">
+                <colgroup>
+                    <col width="100">
+                    <col width="100">
+                    <col width="150">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>电话</th>
+                    <th>性别</th>
+                    <th>操作</th>
 
-        <div class="card">用户管理</div>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>无情</td>
+                    <td>132121</td>
+                    <td>18292946109</td>
+                    <td>男</td>
+                    <td>
+                        <div class="view" onclick="update(this)">修改</div>
+                        <div class="delete">删除</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <!--购物车列表-->
         <div class="card">
             <table class="layui-table">
@@ -382,12 +413,12 @@
                 <!--<option value="opel">童装</option>-->
             <!--</select>-->
             <select id="college" class="g-type1">
-                            <option >-----请选择------
-                           <option value="男装" class="g-type1">男装
-                           <option value="女装">女装
-                           <option value="童装">童装
+                 <option >-----请选择------
+                 <option value="男装" class="g-type1">男装
+                 <option value="女装">女装
+                 <option value="童装">童装
 
-                       </select>
+            </select>
 
         </div>
         <div class="box">
@@ -435,7 +466,6 @@
             <span>产品信息:</span>
             <input type="text" class="g-detail">
         </div>
-
         <div class="btns">
             <div class="exit">取消</div>
             <div class="sure">确定</div>
@@ -447,5 +477,6 @@
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="upload.js"></script>
 <script src="manage.js"></script>
+<!--<script src="js/userlist.js"></script>-->
 </body>
 </html>

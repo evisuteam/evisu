@@ -13,10 +13,7 @@ class DB{
     private $database = 'evisu';
 
 <<<<<<< HEAD
-    public $mysqli;
-=======
     public $mysqli;//数据库链接 $con
->>>>>>> ab75cd5b5afc9846df37f89885379c62ed3b825f
 
     function __construct()
     {
@@ -25,26 +22,18 @@ class DB{
     }
 
     function connect() {
-        $this->mysqli = new mysqli($this->host, $this->username, $this->pwd, $this->database);
+        $this->mysqli = new mysqli($this->host, $this->username, $this->password, $this->database);
         if($this->mysqli->connect_error) {
             die($this->mysqli->connect_error);
         }
     }
 
-<<<<<<< HEAD
-    function query($sql){
-        $result = $this->mysqli->query($sql);
-        //执行sql语句的数据类型
-        $database = gettype($result);
-        if($database == 'object'){
-=======
     function query($sql)
     {
         $result = $this->mysqli->query($sql);
         //获取执行sql语句的结果的数据类型，进行判断，根据类型返回具体的值
         $datatype = gettype($result);
         if($datatype == 'object') {
->>>>>>> ab75cd5b5afc9846df37f89885379c62ed3b825f
             return $result->fetch_all(MYSQLI_ASSOC);
         }else if($datatype == 'boolean'){
             return $result;
