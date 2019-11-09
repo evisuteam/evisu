@@ -5,6 +5,7 @@
     border:none;
     list-style: none;
 }
+
 .nav{
     height: 60px;
     background: #3c8dbc;
@@ -227,4 +228,14 @@ th,td
 .g-count{
     margin-top: 20px;
 }
+.center {
+    text-align: center;
+}
+.i-list{
+    width:200px;
+    height:100px;
+    overflow-x: scroll;
+}
+
+
 
