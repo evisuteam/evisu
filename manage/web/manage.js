@@ -105,8 +105,13 @@ function insert(type1,type2,goodname,size,price,number,count,img,imglist,detail)
                             <td>
                                 <img src="${img}" alt="">
                             </td>
+<<<<<<< HEAD
                             <td class="i">
                                 <div class="i-list"></div>
+=======
+                            <td class="i-list">
+                                <!--<div class="i-list"></div>-->
+>>>>>>> 97756ac0169b1411a486292497c57796e9f3a2c8
                             </td>
                             
                             <td>${detail}</td>

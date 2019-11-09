@@ -12,6 +12,10 @@ class DB{
     private $password = '123456';
     private $database = 'evisu';
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 97756ac0169b1411a486292497c57796e9f3a2c8
     public $mysqli;//数据库链接 $con
 
     function __construct()
